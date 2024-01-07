@@ -1,0 +1,13 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+'POWERRED AINUNMEDIA
+SET !ERRORIGNORE YES
+SET !EXTRACT_TEST_POPUP NO
+
+TAG POS=1 TYPE=div ATTR=class:KhR5aV<sp>typo-r16<sp>two-line-text EXTRACT=TXT
+TAG POS=1 TYPE=div ATTR=class:BazWcl<SP>typo-m18 EXTRACT=TXT
+TAG POS=1 TYPE=P ATTR=class:XS3hLg EXTRACT=TXT
+TAG POS=1 TYPE=img ATTR=class:product-carousel__item<SP>_3XaILN EXTRACT=href
+'ubah nama file=kaospolos.csv dengan nama yang anda inginkan.
+SAVEAS TYPE=EXTRACT FOLDER=C:\Users\hanun\Documents\iMacros\Datasources FILE=kaospolos3.csv
+WAIT SECONDS=2

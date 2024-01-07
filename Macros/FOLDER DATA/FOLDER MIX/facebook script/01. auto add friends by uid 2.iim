@@ -1,0 +1,771 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+TAB CLOSEALLOTHERS
+SET !ERRORIGNORE YES
+SET !REPLAYSPEED FAST
+SET !TIMEOUT_STEP 3
+SET !DATASOURCE uidfb.txt
+
+
+'START BARIS KE
+PROMPT "START ADD LINE" !VAR4
+
+'MASUKKAN JEDA MINIMAL (DETIK)
+PROMPT SETTING<SP>JEDA<SP>MINIMUM<SP>(MISAL<SP>-><SP>5): !VAR1
+
+'MASUKKAN JEDA MAKSIMAL (DETIK)
+PROMPT SETTING<SP>JEDA<SP>MAKSIMAL<SP>(MISAL<SP>-><SP>15): !VAR2
+
+'SETTING JEDA SETELAH ADD 10 ORANG
+PROMPT SUKSES!!<BR>Jeda<SP>akan<SP>otomatis<SP>ACAK<SP>dari<SP>{{!VAR1}}-{{!VAR2}}<SP>detik.<BR><BR>Sekarang<SP>SETTING<SP>jeda<SP>setelah<SP>Add<SP>10<SP>akun<SP>(Misal<SP>-><SP>90,120,180,300)<SP> !VAR3
+SET random EVAL("var min = {{!VAR1}}; var max = {{!VAR2}}; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+WAIT SECONDS=2
+
+SET repl EVAL("'{{!COL1}}'.replace(\"https://www.fcebook.com/\",\"\").replace(\"https://web.fcebook.com/\",\"\").replace(\"https://m.fcebook.com/\",\"\").replace(\"https://free.fcebook.com/\",\"\");")
+
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+'TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+'TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+'TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+'TAG POS=1 TYPE=A ATTR=TXT:Cancel
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Cancel
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Cancel
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Cancel
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Cancel
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Cancel
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Cancel
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Cancel
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Cancel
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS=3
+
+'OPEN NEW TAB, LIKE AND SCROLLING
+TAB OPEN
+TAB T=2
+URL GOTO=https://www.facebook.com/
+WAIT SECONDS=2
+URL GOTO=javascript:window.scrollBy(0,800)
+TAG POS=1 TYPE=A ATTR=CLASS:UFILikeLink<SP>_4x9-<SP>_4x9_<SP>_48-k
+WAIT SECONDS=5
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,1000)
+WAIT SECONDS=5
+TAG POS=1 TYPE=A ATTR=CLASS:UFILikeLink<SP>_4x9-<SP>_4x9_<SP>_48-k
+URL GOTO=javascript:window.scrollBy(0,500)
+URL GOTO=javascript:window.scrollBy(0,500)
+URL GOTO=javascript:window.scrollBy(0,500)
+URL GOTO=javascript:window.scrollBy(0,500)
+WAIT SECONDS={{!VAR3}}
+
+'BACK TO ADDING
+TAB T=1
+
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS=2
+
+'BUKA PESAN
+TAB T=2
+TAG POS=1 TYPE=DIV ATTR=TXT:*<SP>Messages
+WAIT SECONDS=2
+TAG POS=1 TYPE=A ATTR=TXT:Message<SP>Requests
+WAIT SECONDS=2
+TAG POS=1 TYPE=DIV ATTR=TXT:*<SP>Messages
+WAIT SECONDS={{!VAR3}}
+TAB CLOSE
+
+TAB T=1
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS=2
+
+'OPEN NEW TAB, LIKE AND SCROLLING
+TAB OPEN
+TAB T=2
+URL GOTO=https://www.facebook.com/
+WAIT SECONDS=2
+URL GOTO=javascript:window.scrollBy(0,800)
+TAG POS=1 TYPE=A ATTR=CLASS:UFILikeLink<SP>_4x9-<SP>_4x9_<SP>_48-k
+WAIT SECONDS=5
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,1000)
+WAIT SECONDS=5
+TAG POS=1 TYPE=A ATTR=CLASS:UFILikeLink<SP>_4x9-<SP>_4x9_<SP>_48-k
+URL GOTO=javascript:window.scrollBy(0,500)
+URL GOTO=javascript:window.scrollBy(0,500)
+URL GOTO=javascript:window.scrollBy(0,500)
+URL GOTO=javascript:window.scrollBy(0,500)
+WAIT SECONDS={{!VAR3}}
+
+TAB T=1
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+ADD !VAR4 1
+SET !DATASOURCE_LINE {{!VAR4}}
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+URL GOTO=javascript:window.scrollBy(0,2000)
+WAIT SECONDS=2
+
+'BUKA PESAN
+TAB T=2
+TAG POS=1 TYPE=DIV ATTR=TXT:*<SP>Messages
+WAIT SECONDS=2
+TAG POS=1 TYPE=A ATTR=TXT:Message<SP>Requests
+WAIT SECONDS=2
+TAG POS=1 TYPE=DIV ATTR=TXT:*<SP>Messages
+TAG POS=1 TYPE=A ATTR=CLASS:UFILikeLink<SP>_4x9-<SP>_4x9_<SP>_48-k
+URL GOTO=javascript:window.scrollBy(0,2000)
+WAIT SECONDS=2
+URL GOTO=javascript:window.scrollBy(0,2000)
+WAIT SECONDS={{!VAR3}}
+
+TAB CLOSE
+
+TAB T=1
+SET !DATASOURCE_LINE 41
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 42
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 43
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 44
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 45
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 46
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 47
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 48
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 49
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 50
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+URL GOTO=javascript:window.scrollBy(0,2000)
+WAIT SECONDS=2
+
+TAB OPEN
+TAB T=2
+URL GOTO=https://www.google.com/
+EVENTS TYPE=KEYPRESS SELECTOR="#lst-ib" CHARS="kita istirahat dulu 5 menit ya bro.."
+EVENT TYPE=KEYPRESS SELECTOR="#lst-ib" KEY=13
+WAIT SECONDS=300
+
+
+TAB T=1
+SET !DATASOURCE_LINE 51
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 52
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 53
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 54
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 55
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 56
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 57
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 58
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 59
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 60
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+
+'BUKA PESAN
+TAB T=2
+URL GOTO=https://www.facebook.com/
+WAIT SECONDS=2
+TAG POS=1 TYPE=DIV ATTR=TXT:*<SP>Messages
+WAIT SECONDS=2
+TAG POS=1 TYPE=A ATTR=TXT:Message<SP>Requests
+WAIT SECONDS=2
+TAG POS=1 TYPE=DIV ATTR=TXT:*<SP>Messages
+WAIT SECONDS={{!VAR3}}
+
+TAB CLOSE
+
+TAB T=1
+SET !DATASOURCE_LINE 61
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 62
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 63
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 64
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 65
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 66
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 67
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS=2
+SET !DATASOURCE_LINE 68
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 69
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 70
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS=2
+
+'OPEN NEW TAB, LIKE AND SCROLLING
+TAB OPEN
+TAB T=2
+URL GOTO=https://www.facebook.com/
+WAIT SECONDS=2
+URL GOTO=javascript:window.scrollBy(0,800)
+TAG POS=1 TYPE=A ATTR=CLASS:UFILikeLink<SP>_4x9-<SP>_4x9_<SP>_48-k
+WAIT SECONDS=5
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,1000)
+WAIT SECONDS=5
+TAG POS=1 TYPE=A ATTR=CLASS:UFILikeLink<SP>_4x9-<SP>_4x9_<SP>_48-k
+URL GOTO=javascript:window.scrollBy(0,500)
+URL GOTO=javascript:window.scrollBy(0,500)
+URL GOTO=javascript:window.scrollBy(0,500)
+URL GOTO=javascript:window.scrollBy(0,500)
+WAIT SECONDS={{!VAR3}}
+
+TAB T=1
+SET !DATASOURCE_LINE 71
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 72
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS=2
+SET !DATASOURCE_LINE 73
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 74
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 75
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 76
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 77
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 78
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 79
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 80
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS=2
+
+'BUKA PESAN
+TAB T=2
+TAG POS=1 TYPE=DIV ATTR=TXT:*<SP>Messages
+WAIT SECONDS=2
+TAG POS=1 TYPE=A ATTR=TXT:Message<SP>Requests
+WAIT SECONDS=2
+TAG POS=1 TYPE=DIV ATTR=TXT:*<SP>Messages
+WAIT SECONDS={{!VAR3}}
+
+
+TAB T=1
+SET !DATASOURCE_LINE 81
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 82
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 83
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 84
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 85
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 86
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 87
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 88
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 89
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 90
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS=2
+
+'OPEN NEW TAB, LIKE AND SCROLLING
+TAB T=2
+URL GOTO=https://www.facebook.com/
+WAIT SECONDS=2
+TAG POS=1 TYPE=A ATTR=CLASS:UFILikeLink<SP>_4x9-<SP>_4x9_<SP>_48-k
+URL GOTO=javascript:window.scrollBy(0,1000)
+URL GOTO=javascript:window.scrollBy(0,1000)
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+WAIT SECONDS=2
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+URL GOTO=javascript:window.scrollBy(0,800)
+WAIT SECONDS={{!VAR3}}
+
+
+TAB T=1
+SET !DATASOURCE_LINE 91
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 92
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 93
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 94
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 95
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 96
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 97
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 98
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 99
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS={{random}}
+SET !DATASOURCE_LINE 100
+URL GOTO=https://m.facebook.com/{{repl}}
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>Friend
+TAG POS=1 TYPE=A ATTR=TXT:Close
+WAIT SECONDS=2
+
+PROMPT Selesai.
+

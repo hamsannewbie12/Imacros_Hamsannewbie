@@ -1,0 +1,88 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+SET !ERRORIGNORE YES
+SET !DATASOURCE uploadYT.csv
+SET !LOOP 2
+SET !DATASOURCE_LINE {{!LOOP}}
+
+TAG POS=2 TYPE=DIV ATTR=TXT:Buat
+wait seconds=3
+TAG POS=1 TYPE=YT-FORMATTED-STRING ATTR=TXT:Upload<SP>video
+wait seconds=3
+
+'Upload Video
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:Filedata CONTENT=D:\#<sp>2021<sp>Project<sp>MS<sp>Glow\Upload<sp>YT\Hasil<sp>Spin<sp>Single\list<sp>done\{{!COL1}}.mp4
+wait seconds=10
+
+'Ini Judul
+SET !CLIPBOARD {{!COL2}}
+EVENTS TYPE=KEYPRESS SELECTOR="#textbox[aria-label=\"Tambahkan judul yang menjelaskan video Anda\"]" CHARS="V" MODIFIERS="CTRL"
+wait seconds=10
+
+'Ini Deskripsi
+SET !CLIPBOARD {{!COL3}}
+EVENTS TYPE=KEYPRESS SELECTOR="#textbox[aria-label=\"Beri tahu penonton tentang video Anda\"]" CHARS="V" MODIFIERS="CTRL"
+wait seconds=10
+
+'Ini Playlist
+EVENT TYPE=CLICK SELECTOR="#basics>DIV:nth-of-type(4)>DIV:nth-of-type(3)>DIV>YTCP-VIDEO-METADATA-PLAYLISTS>YTCP-TEXT-DROPDOWN-TRIGGER>YTCP-DROPDOWN-TRIGGER>DIV>DIV:nth-of-type(3)>TP-YT-IRON-ICON" BUTTON=0
+wait seconds=1
+EVENT TYPE=CLICK SELECTOR="#checkbox-label-0>SPAN" BUTTON=0
+wait seconds=1
+EVENT TYPE=CLICK SELECTOR="#dialog>DIV:nth-of-type(2)>YTCP-BUTTON:nth-of-type(3)>DIV" BUTTON=0
+wait seconds=3
+
+TAG POS=1 TYPE=YTCP-VE ATTR=TXT:Tidak,<SP>video<SP>ini<SP>tidak<SP>Dibuat<SP>untuk<SP>Anak-Anak
+wait seconds=1
+TAG POS=1 TYPE=DIV ATTR=TXT:Tampilkan<SP>lebih<SP>banyak
+wait seconds=1
+
+'Ini Tag
+'EVENTS TYPE=KEYPRESS SELECTOR="#text-input" CHARS="{{!COL4}}, {{!COL5}}, {{!COL6}}, {{!COL7}}, {{!COL8}},"
+TAG POS=1 TYPE=INPUT ATTR=ID:text-input&&placeholder:"Tambahkan tag" CONTENT="{{!COL4}}, {{!COL5}}, {{!COL6}}, {{!COL7}}, {{!COL8}},"
+wait seconds=3
+
+'Ini lokasi
+EVENT TYPE=CLICK SELECTOR="#location>YTCP-FORM-AUTOCOMPLETE>YTCP-DROPDOWN-TRIGGER>DIV>DIV:nth-of-type(2)>INPUT" BUTTON=0
+wait seconds=1
+EVENTS TYPE=KEYPRESS SELECTOR="#location>YTCP-FORM-AUTOCOMPLETE>YTCP-DROPDOWN-TRIGGER>DIV>DIV:nth-of-type(2)>INPUT" CHARS="{{!COL11}}"
+wait seconds=1
+EVENT TYPE=CLICK SELECTOR="#text-item-2>YTCP-VE>DIV>DIV>YT-FORMATTED-STRING>SPAN:nth-of-type(3)" BUTTON=0
+wait seconds=1
+
+TAG POS=1 TYPE=DIV ATTR=TXT:Berikutnya
+wait seconds=1
+TAG POS=1 TYPE=DIV ATTR=TXT:Berikutnya
+wait seconds=1
+TAG POS=1 TYPE=DIV ATTR=TXT:Berikutnya
+wait seconds=1
+TAG POS=1 TYPE=DIV ATTR=TXT:Jadwalkan
+TAG POS=1 TYPE=TP-YT-PAPER-RADIO-BUTTON ATTR=TXT:Jadwalkan
+wait seconds=1
+
+'Ini schedule
+EVENT TYPE=CLICK SELECTOR="#datepicker-trigger>YTCP-DROPDOWN-TRIGGER>DIV>DIV:nth-of-type(3)>TP-YT-IRON-ICON" BUTTON=0
+wait seconds=1
+EVENTS TYPE=KEYPRESS SELECTOR="IRON-INPUT>INPUT" KEYS="[8,8,8,8,8,8,8,8,8,8,8]"
+EVENTS TYPE=KEYPRESS SELECTOR="IRON-INPUT>INPUT" CHARS="{{!COL9}}"
+wait seconds=1
+EVENT TYPE=KEYPRESS SELECTOR="IRON-INPUT>INPUT" KEY=13
+wait seconds=1
+EVENT TYPE=CLICK SELECTOR="#time-of-day-trigger>YTCP-DROPDOWN-TRIGGER>DIV>DIV:nth-of-type(3)>TP-YT-IRON-ICON" BUTTON=0
+wait seconds=1
+TAG POS=1 TYPE=tp-yt-paper-item.style-scope.ytcp-time-of-day-picker ATTR=TXT:{{!COL10}}
+wait seconds=1
+TAG POS=2 TYPE=DIV ATTR=TXT:Jadwalkan
+wait seconds=15
+
+'Scrape link video
+SET !EXTRACT_TEST_POPUP NO
+TAG POS=1 TYPE=A ATTR=ID:watch-url EXTRACT=HREF
+SET linkVideo {{!EXTRACT}}
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=LinkHasilScheduleYT.csv
+wait seconds=5
+
+EVENT TYPE=CLICK SELECTOR="#close-button>DIV" BUTTON=0
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*60 + 120); randomNumber;")
+WAIT SECONDS={{!VAR1}}

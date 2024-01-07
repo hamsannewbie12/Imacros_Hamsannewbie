@@ -1,0 +1,20 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+SET !EXTRACT NULL
+
+SET !VAR5 NULL
+
+TAG POS={{!LOOP}} TYPE=A ATTR=CLASS:_2ial<SP>_uvc<SP>_8o<SP>_8s<SP>lfloat<SP>_ohe EXTRACT=HREF
+
+SET !VAR1 EVAL("'{{!EXTRACT}}'.replace(\"https://www.facebook.com/\",\"\").replace(\"?ref=br_rs\",\"\").replace(\"profile.php?id=\",\"\").replace(\"https://web.facebook.com/\",\"\");")
+
+SET !EXTRACT {{!VAR1}}
+
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=user-from-graph-search.txt
+WAIT SECONDS=0.1
+
+SET !EXTRACT NULL
+
+URL GOTO=javascript:window.scrollBy(0,500)
+

@@ -1,0 +1,196 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T={{!LOOP}}
+SET !ERRORIGNORE YES
+SET !TIMEOUT_TAG 0
+SET !VAR1 18
+
+URL GOTO=https://m.facebook.com
+wait seconds=2
+TAG POS=1 TYPE=A ATTR=TXT:Edit<SP>Profil
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>A>IMG" BUTTON=0
+wait seconds=2
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:pic CONTENT=C:\Users\HERU\Desktop\paket<SP>creat<SP>akun<SP>fb\Database<SP>Foto\Indo\Akun5\{{!VAR1}}.jpg
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV:nth-of-type(4)>FORM>OL>LI:nth-of-type(2)>INPUT" BUTTON=0
+wait seconds=2
+URL GOTO=https://m.facebook.com/profile.php?v=info&edit_success=1&_rdr
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>A>DIV>SPAN" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV:nth-of-type(4)>FORM>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>A" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>TABLE>TBODY>TR>TD>DIV>DIV>DIV>SPAN>A>IMG" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>DIV>DIV>FORM>DIV>INPUT" BUTTON=0
+wait seconds=2
+URL GOTO=https://m.facebook.com/profile.php?v=info&edit_success=1&_rdr
+wait seconds=2
+TAG POS=1 TYPE=A ATTR=TXT:Jelaskan<SP>Tentang<SP>Diri<SP>Anda
+wait seconds=2
+TAG POS=1 TYPE=TEXTAREA FORM=ACTION:/profile/intro/bio/save/ ATTR=NAME:bio CONTENT=Hidup<SP>itu<SP>bukan<SP>soal<SP>menemukan<SP>diri<SP>Anda<SP>sendiri,<SP>hidup<SP>itu<SP>membuat<SP>diri<SP>Anda<SP>sendiri.
+wait seconds=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/profile/intro/bio/save/ ATTR=*
+wait seconds=2
+'pekerjaan
+URL GOTO=https://m.facebook.com/profile.php?v=info&edit_success=1&_rdr
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>A" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>FORM>TABLE>TBODY>TR>TD>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>FORM>TABLE>TBODY>TR>TD>INPUT" CHARS="wiraswasta"
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>FORM>TABLE>TBODY>TR>TD:nth-of-type(2)>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>A" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>FORM>DIV>DIV:nth-of-type(6)>LABEL>INPUT" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>FORM>DIV>DIV:nth-of-type(9)>LABEL>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>FORM>DIV>DIV:nth-of-type(4)>SELECT:nth-of-type(3)" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>FORM>DIV>DIV:nth-of-type(4)>SELECT:nth-of-type(3)>OPTION:nth-of-type(12)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>FORM>DIV>DIV:nth-of-type(10)>INPUT:nth-of-type(2)" BUTTON=0
+wait seconds=2
+'sma
+URL GOTO=https://m.facebook.com/profile.php?v=info&edit_success=1&_rdr
+wait seconds=1
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>A" BUTTON=0
+wait seconds=1
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>FORM>TABLE>TBODY>TR>TD>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>FORM>TABLE>TBODY>TR>TD>INPUT" CHARS="sma surabaya"
+wait seconds=1
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>FORM>TABLE>TBODY>TR>TD:nth-of-type(2)>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>A" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>FORM>DIV>DIV:nth-of-type(7)>INPUT:nth-of-type(2)" BUTTON=0
+
+'kuliah
+URL GOTO=https://mobile.facebook.com/profile.php?v=info&ref_component=mbasic_home_header&ref_page=%2Fwap%2Fhome.php&refid=8
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>A" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>FORM>TABLE>TBODY>TR>TD>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>FORM>TABLE>TBODY>TR>TD>INPUT" CHARS="ubaya"
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>DIV>DIV>FORM>TABLE>TBODY>TR>TD:nth-of-type(2)>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>A" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>TABLE>TBODY>TR>TD>FORM>DIV>DIV:nth-of-type(7)>INPUT:nth-of-type(2)" BUTTON=0
+
+'trampil
+URL GOTO=https://m.facebook.com/profile.php?v=info&edit_success=1&_rdr
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>A" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>TABLE>TBODY>TR:nth-of-type(2)>TD>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>TABLE>TBODY>TR:nth-of-type(2)>TD>INPUT" CHARS="berdagang"
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>INPUT:nth-of-type(5)" BUTTON=0
+
+'kota asal
+URL GOTO=https://m.facebook.com/profile.php?v=info&nocollections=1&_rdr
+WAIT SECONDS=2
+TAG POS=1 TYPE=SPAN ATTR=TXT:Edit
+WAIT SECONDS=2
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:/a/editprofile.php ATTR=NAME:current_city[] CONTENT=Surabaya,<SP>Indonesia
+WAIT SECONDS=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>INPUT:nth-of-type(5)" BUTTON=0
+WAIT SECONDS=2
+TAG POS=2 TYPE=SPAN ATTR=TXT:Edit
+WAIT SECONDS=2
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:/a/editprofile.php ATTR=NAME:hometown[] CONTENT=Surabaya,<SP>Indonesia
+WAIT SECONDS=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/a/editprofile.php ATTR=NAME:save
+WAIT SECONDS=2
+'tertarik
+URL GOTO=https://m.facebook.com/editprofile.php?type=basic&edit=interested
+wait seconds=2
+TAG POS=8 TYPE=SPAN ATTR=TXT:Edit
+wait seconds=2
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/a/editprofile.php ATTR=NAME:new_info_arr[0] CONTENT=YES
+wait seconds=2
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/a/editprofile.php ATTR=NAME:new_info_arr[1] CONTENT=YES
+wait seconds=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/a/editprofile.php ATTR=NAME:save
+wait seconds=2
+'lahir
+URL GOTO=https://m.facebook.com/profile.php?v=info&edit_success=1&_rdr
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(7)>DIV>DIV>DIV>TABLE>TBODY>TR>TD>DIV>SPAN>A>SPAN" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>SPAN>SELECT" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>SPAN>SELECT>OPTION:nth-of-type(18)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>SPAN>SELECT:nth-of-type(2)" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>SPAN>SELECT:nth-of-type(2)>OPTION:nth-of-type(6)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>SPAN>SELECT:nth-of-type(3)" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>SPAN>SELECT:nth-of-type(3)>OPTION:nth-of-type(20)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>INPUT:nth-of-type(5)" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(3)>TD>LABEL>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>INPUT:nth-of-type(5)" BUTTON=0
+'bahasa
+URL GOTO=https://m.facebook.com/profile.php?v=info&edit_success=1&_rdr
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(7)>DIV>DIV>DIV:nth-of-type(4)>TABLE>TBODY>TR>TD>DIV>SPAN>A>SPAN" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>TABLE>TBODY>TR:nth-of-type(2)>TD>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>TABLE>TBODY>TR:nth-of-type(2)>TD>INPUT" CHARS="jawa"
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>INPUT:nth-of-type(5)" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>INPUT:nth-of-type(5)" BUTTON=0
+'agama
+URL GOTO=https://m.facebook.com/profile.php?v=info&edit_success=1&_rdr
+wait seconds=2
+TAG POS=10 TYPE=SPAN ATTR=TXT:Edit
+'TAG POS=11 TYPE=SPAN ATTR=TXT:Edit
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>INPUT" CHARS="islam"
+wait seconds=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/a/editprofile.php ATTR=NAME:save
+wait seconds=2
+'politik
+URL GOTO=https://m.facebook.com/profile.php?v=info&nocollections=1&_rdr#nicknames
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(7)>DIV>DIV>DIV:nth-of-type(6)>TABLE>TBODY>TR>TD>DIV>SPAN>A>SPAN" BUTTON=0
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>TABLE>TBODY>TR:nth-of-type(2)>TD>INPUT" CHARS="netral"
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>FORM>INPUT:nth-of-type(5)" BUTTON=0
+wait seconds=2
+TAG POS=1 TYPE=A ATTR=TXT:Tambahkan<SP>nama<SP>panggilan,<SP>nama<SP>kecil...
+wait seconds=2
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:/profile/edit/info/save/fieldwithtextanddropdown/?fieldtype=nicknames&info_surface=info ATTR=NAME:text CONTENT=motor<SP>mini<SP>surabaya<SP>murah
+wait seconds=2
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/profile/edit/info/save/fieldwithtextanddropdown/?fieldtype=nicknames&info_surface=info ATTR=NAME:checkbox CONTENT=YES
+wait seconds=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/profile/edit/info/save/fieldwithtextanddropdown/?fieldtype=nicknames&info_surface=info ATTR=NAME:save
+wait seconds=2
+TAG POS=1 TYPE=A ATTR=TXT:Tambahkan<SP>status<SP>hubungan
+wait seconds=2
+TAG POS=1 TYPE=A ATTR=TXT:Lajang
+wait seconds=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/a/editprofile.php ATTR=NAME:save
+wait seconds=2
+URL GOTO=https://m.facebook.com/profile.php?v=info&ref_component=mbasic_home_header&ref_page=%2Fwap%2Fhome.php&refid=7
+wait seconds=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/a/editprofile.php ATTR=NAME:save
+wait seconds=2
+TAG POS=1 TYPE=A ATTR=TXT:Tulis<SP>tentang<SP>diri<SP>Anda
+wait seconds=2
+TAG POS=1 TYPE=P ATTR=TXT:Jika<SP>Anda<SP>ingin<SP>sukses,<SP>carilah<SP>seseorang*
+wait seconds=2
+TAG POS=1 TYPE=TEXTAREA FORM=ACTION:/profile/edit/aboutme/?info_surface=info ATTR=NAME:bio CONTENT=Jika<SP>Anda<SP>ingin<SP>sukses,<SP>carilah<SP>seseorang<SP>yang<SP>telah<SP>mencapai<SP>hasil<SP>yang<SP>Anda<SP>inginkan<SP>dan<SP>menyalin<SP>apa<SP>yang<SP>mereka<SP>lakukan<SP>dan<SP>Anda<SP>akan<SP>mencapai<SP>hasil<SP>yang<SP>sama.
+wait seconds=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/profile/edit/aboutme/?info_surface=info ATTR=NAME:save
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(13)>DIV>HEADER>TABLE>TBODY>TR>TD>DIV>SPAN>A" BUTTON=0
+wait seconds=2
+TAG POS=1 TYPE=TEXTAREA FORM=ACTION:/profile/edit/quote/?info_surface=info ATTR=NAME:quote CONTENT=Saat<SP>tidak<SP>berhasil<SP>mewujudkan<SP>keinginan,<SP>Anda<SP>akan<SP>menderita.<SP>Saat<SP>mendapatkan<SP>apa<SP>yang<SP>tidak<SP>diinginkan,<SP>Anda<SP>juga<SP>menderita.<SP>Bahkan<SP>ketika<SP>berhasil<SP>memperoleh<SP>yang<SP>diinginkan,<SP>Anda<SP>tetap<SP>akan<SP>menderita<SP>karena<SP>tak<SP>mampu<SP>memilikinya<SP>untuk<SP>selamanya.
+wait seconds=2
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/profile/edit/quote/?info_surface=info ATTR=NAME:save
+wait seconds=10
+
+
+
+

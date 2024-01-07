@@ -1,0 +1,110 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !ERRORIGNORE YES
+
+
+TAG POS=1 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=1 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=1 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=2 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=2 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=2 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=3 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=3 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=3 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=4 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=4 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=4 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=5 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=5 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=5 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=6 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=6 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=6 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=7 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=7 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=7 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=8 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=8 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=8 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=9 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=9 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=9 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=10 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=10 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=10 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=11 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=11 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=11 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=12 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=12 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=12 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=13 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=13 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=13 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=14 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=14 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=14 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=15 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=15 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=15 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=16 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=16 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=16 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=17 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=17 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=17 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=18 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=18 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=18 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=19 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=19 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=19 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+TAG POS=20 TYPE=H3 ATTR=CLASS:"section-result-title" EXTRACT=TXT
+TAG POS=20 TYPE=SPAN ATTR=class:"section-result-location" EXTRACT=TXT
+TAG POS=20 TYPE=SPAN ATTR=CLASS:"section-result-info section-result-phone-number" EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=hasilmaps.csv
+
+WAIT SECONDS=5
+
+TAG POS=1 TYPE=BUTTON ATTR=ID:n7lv7yjyC35__section-pagination-button-next
+
+WAIT SECONDS=20

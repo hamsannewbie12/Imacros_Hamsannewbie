@@ -1,0 +1,9 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+'URL GOTO=https://shopee.co.id/Koas-Polos-Murah-O-neck-Bahan-spandex-Jersey-i.275591306.3338623616
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Hitam
+TAG POS=1 TYPE=BUTTON ATTR=TXT:L
+TAG POS=1 TYPE=BUTTON ATTR=TXT:beli<SP>sekarang
+'TAG POS=1 TYPE=DIV ATTR=CLASS:stardust-checkbox__box&&TXT:
+WAIT SECONDS=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV:nth-of-type(7)>DIV:nth-of-type(5)>BUTTON" BUTTON=0

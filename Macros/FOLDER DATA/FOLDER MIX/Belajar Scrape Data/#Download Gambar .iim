@@ -1,0 +1,11 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE datakaos.csv
+SET !LOOP 1
+SET !ERRORIGNORE YES
+SET !TIMEOUT_STEP 10
+
+URL GOTO={{!COL4}}
+'Silakan Ganti baris Script "C:\Users\media\Documents\iMacros\Downloads\Gambar" dengan tempat folder penyimpanan foto di pc Anda
+SAVEAS TYPE=PNG FOLDER=C:\Users\media\Documents\iMacros\Downloads\Gambar\ FILE=Foto{{!NOW:ddmmyyyy_hhnnss}}
+TAG POS=1 TYPE=IMG ATTR=SRC:{{!COL4}}

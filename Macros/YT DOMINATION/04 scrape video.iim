@@ -1,0 +1,9 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+'Scrape link video
+SET !EXTRACT_TEST_POPUP NO
+TAG POS={{!loop}} TYPE=A ATTR=ID:video-title&&class:"yt-simple-endpoint style-scope ytd-grid-video-renderer" EXTRACT=HREF
+SET linkVideo {{!EXTRACT}}
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=KontenVideo.csv
+wait seconds=1

@@ -1,0 +1,14 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !TIMEOUT_TAG 0
+SET !ERRORIGNORE YES
+SET !ERRORCONTINUE YES
+
+'URL GOTO=https://www.olx.co.id/myads
+wait seconds=1
+TAG POS=1 TYPE=I ATTR=CLASS:rui-1XUas<SP>rui-3v4V0&&TITLE:More&&TXT:
+wait seconds=1
+TAG POS=1 TYPE=LI ATTR=TXT:Hapus
+wait seconds=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Hapus
+wait seconds=2

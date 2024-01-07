@@ -1,0 +1,9 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !VAR1 2
+SET !VAR2 4
+SET !REPLAYSPEED FAST
+SET random EVAL("var min = {{!VAR1}}; var max = {{!VAR2}}; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+TAG POS=1 TYPE=A ATTR=CLASS:UFILikeLink<SP>_4x9-<SP>_4x9_<SP>_48-k
+URL GOTO=javascript:window.scrollBy(0,2000)
+WAIT SECONDS={{random}}

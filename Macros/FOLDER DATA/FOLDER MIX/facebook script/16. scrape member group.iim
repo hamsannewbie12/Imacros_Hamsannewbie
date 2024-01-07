@@ -1,0 +1,29 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+SET !LOOP 1
+
+SET idgrup 258472514495296
+
+TAG POS=1 TYPE=H1 ATTR=ID:seo_h1_tag EXTRACT=TXT
+
+SET !VAR8 {{!EXTRACT}} 
+SET !EXTRACT NULL
+SET !VAR5 {{idgrup}}
+
+SET !VAR6 EVAL("'{{!VAR5}}'.replace(\"https://www.facebook.com/groups/\",\"\").replace(\"/members/\",\"\");")
+
+SET !VAR5 NULL
+TAG POS={{!LOOP}} TYPE=A ATTR=CLASS:_60rg<SP>_8o<SP>_8r<SP>lfloat<SP>_ohe EXTRACT=HREF
+SET !VAR1 EVAL("'{{!EXTRACT}}'.replace(\"https://www.facebook.com/\",\"\").replace(\"https://web.facebook.com/\",\"\").replace(\"?fref=gm&dti={{!VAR6}}&hc_location=group\",\"\").replace(\"profile.php?id=\",\"\").replace(\"&fref=gm&dti={{!VAR6}}&hc_location=group\",\"\");")
+
+SET !EXTRACT {{!VAR1}}
+
+
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=group-member-{{!VAR8}}.txt
+WAIT SECONDS=0.1
+
+SET !EXTRACT NULL
+
+URL GOTO=javascript:window.scrollBy(0,1000)
+

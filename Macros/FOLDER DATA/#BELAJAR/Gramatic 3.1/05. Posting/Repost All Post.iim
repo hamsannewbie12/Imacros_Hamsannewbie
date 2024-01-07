@@ -1,0 +1,66 @@
+﻿
+
+'TENTUKAN HASHTAG ANDA SENDIRI
+SET hashtag "#hashtag1 #hashtag2 #hashtag3"
+
+'RANDOM DELAY (dalam detik)
+SET min 10
+SET max 10
+
+'prompt "JUMLAH REPOST:" loop
+'prompt "CAPTION:" caption
+'prompt "HASHTAG: (Contoh: #sepatu  #diet  #gamis)" hashtag
+SET folder {{!FOLDER_DATASOURCE}}
+SET !EXTRACT_TEST_POPUP NO
+SET !TIMEOUT_STEP 30
+SET !TIMEOUT_PAGE 30
+SET !ERRORIGNORE YES
+SET !EXTRACT NULL
+SET !LOOP 1
+SET !EXTRACT {{!URLCURRENT}}
+SET url {{!EXTRACT}}
+SET !EXTRACT NULL
+TAG POS={{!LOOP}} TYPE=DIV ATTR=CLASS:_9AhH0
+WAIT SECONDS=5
+SET !TIMEOUT_STEP 0
+TAG POS=1 TYPE=BUTTON ATTR=CLASS:sXUSN
+WAIT SECONDS=1
+TAG POS=1 TYPE=A ATTR=CLASS:FPmhX*notranslate*MBL3Z EXTRACT=TXT
+SET userx {{!EXTRACT}}
+SET !EXTRACT NULL
+
+TAG POS=R1 TYPE=SPAN ATTR=TXT:* EXTRACT=HTM
+SET cap EVAL("var a='{{!EXTRACT}}'; var b=a.toString().replace('#EANF#','').replace(/<br>/g,'#br#').replace(/<(.*?)>/g,''); b;")
+set caps EVAL("var a='{{cap}}'.toString().replace(/#br#/g,'<br>'); a;")
+set caps1 EVAL("var b='{{caps}}'.replace(/&nbsp;/g,'<SP>'); b;")
+set caps2 EVAL("var b='{{caps1}}'.replace(/&gt;/g,'>'); b;")
+set caps3 EVAL("var c='{{caps2}}'.replace(/&lt;/g,'<'); c;")
+set cap2 EVAL("var e='{{caps3}}'.replace(/&amp;/g,'&'); e;")
+
+SET !EXTRACT NULL
+'TAG POS=2 TYPE=IMG ATTR=SRC:*.jpg*oh=* EXTRACT=HREF
+'URL GOTO={{!EXTRACT}}
+ONDOWNLOAD FOLDER={{folder}} FILE=repost WAIT=YES
+TAG POS=1 TYPE=IMG ATTR=CLASS:FFVAD&&SRC:*.jpg*oh=* CONTENT=EVENT:SAVEPICTUREAS
+WAIT SECONDS=4
+'URL GOTO=https://www.instagram.com/
+TAG POS=1 TYPE=DIV ATTR=CLASS:*&&ROLE:menuitem
+'TAG POS=4 TYPE=INPUT:FILE FORM=NAME:NoFormName ATTR=* CONTENT={{folder}}\repost.jpg
+TAG POS=1 TYPE=INPUT:FILE FORM=NAME:NoFormName ATTR=* CONTENT={{folder}}\repost.jpg
+WAIT SECONDS=2
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Expand
+WAIT SECONDS=3
+FILEDELETE NAME={{folder}}\repost.jpg
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Next
+WAIT SECONDS=3
+EVENT TYPE=CLICK SELECTOR="#react-root>SECTION>DIV:nth-of-type(2)>SECTION>DIV>TEXTAREA" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="#react-root>SECTION>DIV:nth-of-type(2)>SECTION>DIV>TEXTAREA" CHARS="{{cap2}}"
+EVENTS TYPE=KEYPRESS SELECTOR="#react-root>SECTION>DIV:nth-of-type(2)>SECTION>DIV>TEXTAREA" KEYS="[13,13]"
+'EVENTS TYPE=KEYPRESS SELECTOR="#react-root>SECTION>DIV:nth-of-type(2)>SECTION>DIV>TEXTAREA" CHARS="{{hashtag}}"
+WAIT SECONDS=3
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Share
+WAIT SECONDS=1
+WAIT SECONDS=5
+URL GOTO={{url}}
+SET delay EVAL("var randomNumber = Math.floor(Math.random() * ({{max}} - {{min}} + 1)) + {{min}}; randomNumber;")
+WAIT SECONDS={{delay}}

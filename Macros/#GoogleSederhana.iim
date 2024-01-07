@@ -1,0 +1,11 @@
+﻿SET !TIMEOUT_STEP 1
+SET !TIMEOUT_PAGE 30
+SET !ERRORIGNORE YES
+
+URL GOTO =https://www.google.com/
+TAG POS=1 TYPE=input ATTR=aria-label:Penelusuran<sp>Google CONTENT=Penelusuran<sp>Google
+TAG XPATH="//input[@name='q']" CONTENT="Hamsan Keren"
+wait seconds=2
+TAG POS=1 TYPE=input ATTR=aria-label:Penelusuran<sp>Google
+EVENT TYPE=KEYPRESS SELECTEDTEXT=0 CHAR=13
+

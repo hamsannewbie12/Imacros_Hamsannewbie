@@ -1,0 +1,83 @@
+﻿'OWL ASISSTANCE v2 bot sederhana yang di buat untuk menghemat dan memudahkan pekerjaan Internet Marketing Anda
+'Catatan Penting tentang OWL ASISSTANCE :
+'1. BOLEH dipake untuk keperluan pribadi/komersil untuk buka jasa.
+'2. TIDAK BOLEH dibagikan lagi kepada orang lain baik itu di JUAL (tanpa sepengetahuan saya), BONUS AFF atau di bagikan secara GERATIS
+'Ngeyel Saya serahkan semua nya sama ALLAH SWT, da aku mah apa atuh :'( . 
+'Pertanyaan, saran fitur tambahan, dan komentar tentang bot ini, silahkan kesini ajah :fb.com/aliffabdoelrahman | D2285340
+'Semoga OWL ASISSTANCE v2 Bot ini bermanfaat buat cikgu :D
+'Please jangan hapus catatan diatas tadi.
+'------------------------------------------------------
+SET !REPLAYSPEED FAST
+SET !ERRORIGNORE YES
+SET !EXTRACT_TEST_POPUP NO
+' Delay Timeout bisa di sesuaikan dengan kondisi kecepatan internet masing-masin, ubah nilai 5 dan 60 untuk mempercepat/memperlambat delay
+SET !TIMEOUT 60
+' Kecepatan perintah ( Fast = Sangat Cepat/ Medium= Sedang/ Slow=Sangat Lambat)
+SET !DATASOURCE SP_AMBEXA.txt
+SET !DATASOURCE_COLUMNS 10
+'SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*592+ 1); randomNumber;")
+'SET !LOOP 29
+SET !DATASOURCE_LINE {{!LOOP}}
+'-----------------------------------------------------------------------------------
+'WAIT SECONDS=5
+'TAG POS={{!LOOP}} TYPE=DIV ATTR=CLASS:_1gkBDw<SP>_2O43P5
+URL GOTO={{!COL1}}
+WAIT SECONDS=3
+ADD !EXTRACT {{!URLCURRENT}}
+'Nama Produk
+TAG POS=1 TYPE=DIV ATTR=class:qaNIZv EXTRACT=TXT
+'Fav
+TAG POS=2 TYPE=DIV ATTR=CLASS:_1-aYcb EXTRACT=TXT
+WAIT SECONDS=0.1
+'Rate Penjualan
+TAG POS=1 TYPE=DIV ATTR=CLASS:flex<SP>M3KjhJ EXTRACT=TXT
+WAIT SECONDS=0.1
+'Penilaian Produk
+TAG POS=2 TYPE=DIV ATTR=CLASS:flex<SP>M3KjhJ EXTRACT=TXT
+WAIT SECONDS=0.1
+'Produk Terjual
+TAG POS=1 TYPE=DIV ATTR=CLASS:flex<SP>SbDIui EXTRACT=TXT
+WAIT SECONDS=0.1
+'Harga Produk
+TAG POS=1 TYPE=DIV ATTR=CLASS:_3n5NQx EXTRACT=TXT
+WAIT SECONDS=0.1
+'Ongkir Gratis
+TAG POS=1 TYPE=DIV ATTR=CLASS:_5y6zF4 EXTRACT=TXT
+WAIT SECONDS=0.1
+'Warna Produk
+TAG POS=1 TYPE=DIV ATTR=CLASS:flex<SP>items-center<SP>crl7WW EXTRACT=HTM
+'Nama Toko
+TAG POS=1 TYPE=DIV ATTR=CLASS:_3Lybjn EXTRACT=TXT
+WAIT SECONDS=0.1
+TAG POS=1 TYPE=DIV ATTR=CLASS:-Gna22<SP>_32EvOQ EXTRACT=TXT
+WAIT SECONDS=0.1
+TAG POS=2 TYPE=DIV ATTR=CLASS:-Gna22<SP>_32EvOQ EXTRACT=TXT
+WAIT SECONDS=0.1
+TAG POS=3 TYPE=DIV ATTR=CLASS:-Gna22<SP>_32EvOQ EXTRACT=TXT
+WAIT SECONDS=0.1
+TAG POS=1 TYPE=DIV ATTR=CLASS:_2aZyWI EXTRACT=HTM
+WAIT SECONDS=0.1
+'Deskripsi Produk
+TAG POS=1 TYPE=DIV ATTR=CLASS:_2u0jt9 EXTRACT=TXT
+WAIT SECONDS=0.1
+TAG POS=1 TYPE=DIV ATTR=CLASS:Wrsd9N&&TXT:
+WAIT SECONDS=0.1
+TAG POS=1 TYPE=DIV ATTR=CLASS:_3TtC8T<SP>V1Fpl5 EXTRACT=HTM
+TAG POS=1 TYPE=DIV ATTR=CLASS:HhAy2u
+WAIT SECONDS=0.1
+SET !TIMEOUT 10
+TAG POS=1 TYPE=DIV ATTR=CLASS:_3TtC8T<SP>V1Fpl5 EXTRACT=HTM
+TAG POS=1 TYPE=DIV ATTR=CLASS:HhAy2u
+WAIT SECONDS=0.1
+TAG POS=1 TYPE=DIV ATTR=CLASS:_3TtC8T<SP>V1Fpl5 EXTRACT=HTM
+TAG POS=1 TYPE=DIV ATTR=CLASS:HhAy2u
+WAIT SECONDS=0.1
+TAG POS=1 TYPE=DIV ATTR=CLASS:_3TtC8T<SP>V1Fpl5 EXTRACT=HTM
+TAG POS=1 TYPE=DIV ATTR=CLASS:HhAy2u
+WAIT SECONDS=0.1
+TAG POS=1 TYPE=DIV ATTR=CLASS:_3TtC8T<SP>V1Fpl5 EXTRACT=HTM
+TAG POS=1 TYPE=DIV ATTR=CLASS:HhAy2u
+WAIT SECONDS=0.1
+SAVEAS TYPE=EXTRACT FOLDER={{!FOLDER_DATASOURCE}} FILE=SP_DETAILAMBEXA.CSV
+WAIT SECONDS=0.1
+

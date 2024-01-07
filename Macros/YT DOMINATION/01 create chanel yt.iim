@@ -1,0 +1,24 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+SET !ERRORIGNORE YES
+SET !DATASOURCE namachanelyt.csv
+SET !LOOP 2
+
+URL GOTO=https://www.youtube.com/account
+wait seconds=3
+TAG POS=1 TYPE=A ATTR=TXT:Add<SP>or<SP>manage<SP>your<SP>channel(s)
+wait seconds=3
+TAG POS=2 TYPE=YT-FORMATTED-STRING ATTR=ID:text
+wait seconds=3
+TAG POS=1 TYPE=A ATTR=TXT:Create<SP>a<SP>new<SP>channel
+wait seconds=3
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:createaccount ATTR=ID:PlusPageName CONTENT="{{!COL1}}"
+wait seconds=3
+TAG POS=1 TYPE=SPAN ATTR=CLASS:consent-checkmark&&TXT:
+wait seconds=3
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ID:createaccount ATTR=ID:ConsentCheckbox CONTENT=YES
+wait seconds=3
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:createaccount ATTR=ID:submitbutton
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*30 + 60); randomNumber;")
+WAIT SECONDS={{!VAR1}}

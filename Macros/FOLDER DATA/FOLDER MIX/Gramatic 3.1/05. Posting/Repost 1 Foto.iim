@@ -1,0 +1,50 @@
+﻿SET !EXTRACT_TEST_POPUP NO
+SET !ERRORIGNORE YES
+SET !TIMEOUT_STEP 3
+SET folder {{!FOLDER_DATASOURCE}}
+SET !USERAGENT "Mozilla/5.0 (iPhone;CPU iPhone OS 10_2_1 like Mac OS X) AppleWebKit/602.4.6 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"
+
+FILEDELETE NAME={{folder}}{{s}}repost.jpg
+
+'REFRESH
+SET !TIMEOUT_STEP 0
+TAG POS=1 TYPE=BUTTON ATTR=CLASS:sXUSN
+WAIT SECONDS=1
+TAG POS=1 TYPE=A ATTR=CLASS:FPmhX*notranslate*MBL3Z EXTRACT=TXT
+SET userx {{!EXTRACT}}
+SET !EXTRACT NULL
+
+TAG POS=R1 TYPE=SPAN ATTR=TXT:* EXTRACT=HTM
+SET cap EVAL("var a='{{!EXTRACT}}'; var b=a.toString().replace('#EANF#','').replace(/<br>/g,'#br#').replace(/<(.*?)>/g,''); b;")
+set caps EVAL("var a='{{cap}}'.toString().replace(/#br#/g,'<br>'); a;")
+set caps1 EVAL("var b='{{caps}}'.replace(/&nbsp;/g,'<SP>'); b;")
+set caps2 EVAL("var b='{{caps1}}'.replace(/&gt;/g,'>'); b;")
+set caps3 EVAL("var c='{{caps2}}'.replace(/&lt;/g,'<'); c;")
+set cap2 EVAL("var e='{{caps3}}'.replace(/&amp;/g,'&'); e;")
+
+SET !EXTRACT NULL
+'TAG POS=1 TYPE=IMG ATTR=CLASS:FFVAD EXTRACT=HREF
+'URL GOTO={{!EXTRACT}}
+SET !TIMEOUT_STEP 10
+ONDOWNLOAD FOLDER={{folder}} FILE=repost WAIT=YES
+TAG POS=1 TYPE=IMG ATTR=CLASS:FFVAD&&SRC:*.jpg* CONTENT=EVENT:SAVEPICTUREAS
+WAIT SECONDS=4
+
+'URL GOTO=https://www.instagram.com/
+SET !TIMEOUT_STEP 2
+TAG POS=1 TYPE=DIV ATTR=CLASS:*&&ROLE:menuitem
+TAG POS=1 TYPE=INPUT:FILE FORM=NAME:NoFormName ATTR=* CONTENT={{folder}}\repost.jpg
+WAIT SECONDS=2
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Expand
+WAIT SECONDS=2
+FILEDELETE NAME={{folder}}{{s}}repost.jpg
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Next
+WAIT SECONDS=2
+EVENT TYPE=CLICK SELECTOR="#react-root>SECTION>DIV:nth-of-type(2)>SECTION>DIV>TEXTAREA" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="#react-root>SECTION>DIV:nth-of-type(2)>SECTION>DIV>TEXTAREA" CHARS="{{cap2}}"
+EVENTS TYPE=KEYPRESS SELECTOR="#react-root>SECTION>DIV:nth-of-type(2)>SECTION>DIV>TEXTAREA" KEYS="[13,13]"
+'EVENTS TYPE=KEYPRESS SELECTOR="#react-root>SECTION>DIV:nth-of-type(2)>SECTION>DIV>TEXTAREA" CHARS="{{hashtag}}"
+WAIT SECONDS=3
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Share
+WAIT SECONDS=5
+prompt "Finish."

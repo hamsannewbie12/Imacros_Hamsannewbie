@@ -1,0 +1,19 @@
+﻿SET !ERRORIGNORE YES
+
+URL GOTO=https://web.telegram.org/#/im?p=@ShopeeMastery
+TAG POS=1 TYPE=SPAN ATTR=CLASS:tg_head_peer_title EXTRACT=TXT
+SET VAR22 {{!EXTRACT}}
+TAG POS=1 TYPE=SPAN ATTR=TXT:{{!Extract}}
+ WAIT SECONDS=2
+ SET !EXTRACT NULL 
+TAG POS={{!LOOP}} TYPE=A ATTR=CLASS:md_modal_list_peer_name EXTRACT=TXT
+TAG POS=1 TYPE=A ATTR=TXT:{{!Extract}}
+ SET !EXTRACT NULL 
+ WAIT SECONDS=2
+'TAG POS=1 TYPE=I ATTR=CLASS:md_modal_split_action_msg&&TXT:
+TAG POS=2 TYPE=I ATTR=CLASS:md_modal_split_action_msg&&TXT:
+ADD !EXTRACT {{!URLCURRENT}}
+SET !VAR2 EVAL(" extr2='{{!EXTRACT}}'; extr2.split('=')[1]; ") 
+SET !EXTRACT {{!VAR2}}
+TAG POS=1 TYPE=SPAN ATTR=CLASS:tg_head_peer_title EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=* FILE={{VAR22}}.csv

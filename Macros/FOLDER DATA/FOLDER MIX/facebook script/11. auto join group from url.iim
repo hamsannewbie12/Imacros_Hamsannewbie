@@ -1,0 +1,8 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE listgroup.txt
+SET !DATASOURCE_LINE {{!LOOP}}
+SET mlink EVAL("'{{!COL1}}'.replace(\"www.facebook.com\",\"m.facebook.com\");")
+URL GOTO={{mlink}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/a/group/join/?group_id=* ATTR=*
+WAIT SECONDS=5

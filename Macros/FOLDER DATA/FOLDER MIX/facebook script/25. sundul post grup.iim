@@ -1,0 +1,26 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+
+' ===== ISI KOMENTAR =====
+
+SET !VAR1 "Sundul up"
+
+' ========================
+
+
+
+
+SET !DATASOURCE sundul.txt
+set !LOOP 1
+SET !DATASOURCE_LINE {{!LOOP}}
+
+SET mLink EVAL("'{{!COL1}}'.replace(\"www.facebook.com\",\"m.facebook.com\").replace(\"web.facebook.com\",\"m.facebook.com\");")
+
+URL GOTO={{mLink}}
+WAIT SECONDS=3
+EVENT TYPE=CLICK SELECTOR="#composerInput" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="#composerInput" CHARS="{{!VAR1}} {{!NOW:yyyymmdd-hhss}}"
+EVENT TYPE=KEYPRESS SELECTOR="#composerInput" KEY=13
+
+WAIT SECONDS=5

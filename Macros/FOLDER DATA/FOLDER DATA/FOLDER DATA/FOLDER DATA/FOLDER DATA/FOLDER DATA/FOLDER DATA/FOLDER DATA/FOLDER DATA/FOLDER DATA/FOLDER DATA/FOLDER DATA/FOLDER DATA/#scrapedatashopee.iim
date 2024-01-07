@@ -1,0 +1,14 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+'Script di Buat Oleh Hamsan Newbie, Jika ada Kendala mengenai Script Silakan Hubungi "085717636868"
+SET !ERRORIGNORE YES
+SET !EXTRACT_TEST_POPUP NO
+SET !VAR1 EVAL("var xx=Math.floor(Math.random()*(2-0.5))+0.5; xx;") 
+
+TAG POS=1 TYPE=div ATTR=class:KhR5aV<sp>typo-r16<sp>two-line-text EXTRACT=TXT
+TAG POS=1 TYPE=div ATTR=class:BazWcl<SP>typo-m18 EXTRACT=TXT
+TAG POS=1 TYPE=P ATTR=class:XS3hLg EXTRACT=TXT
+TAG POS=1 TYPE=img ATTR=class:product-carousel__item<SP>_3XaILN EXTRACT=href
+'ubah nama file=kaospolos.csv dengan nama yang anda inginkan.
+SAVEAS TYPE=EXTRACT FOLDER=C:\Users\media\Downloads\Documents FILE=kaospolos.csv
+WAIT SECONDS={{!VAR1}}

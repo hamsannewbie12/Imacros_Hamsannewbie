@@ -1,0 +1,11 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !VAR1 EVAL("var xx=Math.floor(Math.random()*(5-3))+3; xx;") 
+URL GOTO=https://m.facebook.com/
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Berita<SP>Lengkap
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Tanggapi
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=SPAN ATTR=TXT:Super
+WAIT SECONDS={{!VAR1}}

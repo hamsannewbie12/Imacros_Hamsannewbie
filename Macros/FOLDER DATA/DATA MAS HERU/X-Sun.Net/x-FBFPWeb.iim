@@ -1,0 +1,52 @@
+'Script Upload Fanspage Toko Facebook Versi Web
+SET !REPLAYSPEED FAST
+SET !ERRORIGNORE YES
+SET !TIMEOUT_STEP 0
+SET !DATASOURCE_LINE {{!LOOP}}
+
+'* Pastikan Fanspage sudah ada Toko nya dan sudah terisi minimal 1 produk (manual)
+'* Saat upload Akun fb harus menggunakan bahasa Indonesia 
+
+'* Silahkan edit disini
+'-Mulai baris ke...
+SET !LOOP 1
+'-masukan username FP https://facebook.com/xsunners
+SET usernameFp xsunners
+'-masukan nama file csv
+SET namaCSV contoh-sepatu
+
+
+
+
+
+'* Mulai dari sini silahkan edit Wait Seconds nya saja, sesuaikan dengan jaringan internet
+SET !DATASOURCE D:\\Dropship\{{namaCSV}}.csv
+URL GOTO=https://www.facebook.com/pg/{{usernameFp}}/shop/
+WAIT SECONDS=2
+TAG POS=1 TYPE=DIV ATTR=CLASS:_5tqv&&TXT:
+WAIT SECONDS=5
+TAG POS=2 TYPE=DIV ATTR=TXT:Tambahkan<SP>Foto
+WAIT SECONDS=1
+SET gbr2 EVAL("var a='{{!COL20}}'; if(a == '#NEXT#'){a='';}else{ a='INPUT:FILE';} a")
+SET gbr3 EVAL("var a='{{!COL21}}'; if(a == '#NEXT#'){a='';}else{ a='INPUT:FILE';} a")
+SET gbr4 EVAL("var a='{{!COL22}}'; if(a == '#NEXT#'){a='';}else{ a='INPUT:FILE';} a")
+SET gbr5 EVAL("var a='{{!COL23}}'; if(a == '#NEXT#'){a='';}else{ a='INPUT:FILE';} a")
+TAG POS=2 TYPE=INPUT:FILE ATTR=* CONTENT=D:\Dropship\img\{{namaCSV}}\{{!LOOP}}-1.jpg
+TAG POS=2 TYPE={{gbr2}} ATTR=* CONTENT=D:\Dropship\img\{{namaCSV}}\{{!LOOP}}-2.jpg
+TAG POS=2 TYPE={{gbr3}} ATTR=* CONTENT=D:\Dropship\img\{{namaCSV}}\{{!LOOP}}-3.jpg
+TAG POS=2 TYPE={{gbr4}} ATTR=* CONTENT=D:\Dropship\img\{{namaCSV}}\{{!LOOP}}-4.jpg
+TAG POS=2 TYPE={{gbr5}} ATTR=* CONTENT=D:\Dropship\img\{{namaCSV}}\{{!LOOP}}-5.jpg
+WAIT SECONDS=20
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Gunakan<sp>*
+SET !CLIPBOARD {{!COL2}}
+EVENT TYPE=KEYPRESS SELECTOR="input[name=productTitle]" CHAR="v" MODIFIERS="ctrl"
+WAIT SECONDS=1
+SET !CLIPBOARD {{!COL11}}
+EVENT TYPE=KEYPRESS SELECTOR="input[placeholder='Masukkan harga']" CHAR="a" MODIFIERS="ctrl"
+EVENT TYPE=KEYPRESS SELECTOR="input[placeholder='Masukkan harga']" CHAR="v" MODIFIERS="ctrl"
+WAIT SECONDS=1
+SET !CLIPBOARD {{!COL15}}
+EVENT TYPE=KEYPRESS SELECTOR="textarea[name=productDescription]" CHAR="v" MODIFIERS="ctrl
+WAIT SECONDS=1
+TAG POS=1 TYPE=A ATTR=TXT:Simpan
+WAIT SECONDS=15

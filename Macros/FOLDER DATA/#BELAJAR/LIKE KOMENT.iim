@@ -1,0 +1,15 @@
+﻿SET !ERRORIGNORE YES
+SET !TIMEOUT_PAGE 100
+SET !TIMEOUT-TAG 0
+'URL GOTO=https://m.facebook.com/?sk=h_chr&_rdr
+WAIT SECONDS=1
+TAB T=1
+TAG POS=1 TYPE=A ATTR=TXT:*Komentar*
+WAIT SECONDS=1
+TAG POS=1 TYPE=A ATTR=HREF:/a/like.php*
+WAIT SECONDS=1
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'composerInput\'][@name=\'comment_text\']" BUTTON=0
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'composerInput\'][@name=\'comment_text\']" CHARS="up keren ini"
+WAIT SECONDS=1
+TAG POS=1 TYPE=INPUT ATTR=VALUE:Komentari&&TYPE:submit
+WAIT SECONDS=5

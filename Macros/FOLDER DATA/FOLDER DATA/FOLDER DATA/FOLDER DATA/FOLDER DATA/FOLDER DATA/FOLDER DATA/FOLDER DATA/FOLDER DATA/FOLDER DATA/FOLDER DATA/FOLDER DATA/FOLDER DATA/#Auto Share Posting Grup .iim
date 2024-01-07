@@ -1,0 +1,33 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE nomorshare.csv
+SET !LOOP 1
+SET !ERRORIGNORE YES
+
+URL GOTO=javascript:window.scrollBy(0,800)
+TAG POS={{!COL1}} TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_KwP9A6LCjA3<SP>sx_f12ff8&&TXT:
+WAIT SECONDS=3
+TAG POS=1 TYPE=SPAN ATTR=TXT:Tawarkan<SP>di<SP>Lebih<SP>Banyak<SP>Tempat
+WAIT SECONDS=3
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(1)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(4)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(5)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(6)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(7)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(8)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(9)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(10)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=0.2
+TAG POS=2 TYPE=SPAN ATTR=TXT:Posting
+WAIT SECONDS=5

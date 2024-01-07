@@ -1,0 +1,8 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !ERRORIGNORE YES
+
+TAG POS={{!LOOP}} TYPE=h3 ATTR=class:section-result-title EXTRACT=TXT
+TAG POS={{!LOOP}} TYPE=SPAN ATTR=class:section-result-location EXTRACT=TXT
+TAG POS={{!LOOP}} TYPE=SPAN ATTR=class:section-result-info<SP>section-result-phone-number EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=D:\Local<SP>Disk\DATA<SP>ECXCEL\SCRAPE<SP>DATA FILE=googlemapsbangunan.csv

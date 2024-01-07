@@ -1,0 +1,41 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+'===========SETTING============
+
+'// set nama file grup
+SET !DATASOURCE grupfb.txt
+
+'// Delay posting (detik)
+SET !VAR1 20
+
+'// Start script dari baris berapa? (default = 1)
+SET !LOOP 1
+
+'// Setting lokasi gambar
+SET !VAR2 F:\logo<SP>test.png
+
+'// Setting kalimat status
+SET !VAR3 "Test status auto posting"
+
+'------------------------------
+
+SET !REPLAYSPEED FAST 
+SET !ERRORIGNORE YES
+SET !DATASOURCE_COLUMNS 5
+SET !DATASOURCE_LINE {{!LOOP}}
+SET !TIMEOUT_STEP 3
+SET mlink EVAL("'{{!COL1}}'.replace(\"www.facebook.com\",\"m.facebook.com\");")
+URL GOTO={{mlink}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/composer/mbasic/?av=*&refid=18 ATTR=NAME:view_photo
+TAG POS=1 TYPE=INPUT:FILE FORM=ACTION:/composer/mbasic/?csid=*&av=*&view_overview ATTR=NAME:file1 CONTENT={{!VAR2}}
+WAIT SECONDS=0.5
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/composer/mbasic/?csid=*&av=*&view_overview ATTR=NAME:add_photo_done
+WAIT SECONDS=5
+EVENT TYPE=CLICK SELECTOR="#u_0_0" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="#u_0_0" CHARS={{!VAR3}}<BR><BR>{{!Now:ddmmhhss}}{{!LOOP}}
+WAIT SECONDS=5
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:composer_form ATTR=NAME:view_post
+TAG POS=1 TYPE=A ATTR=TXT:Skip
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/friends/selector/?return_uri=* ATTR=NAME:done
+WAIT SECONDS={{!VAR1}}

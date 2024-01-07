@@ -1,0 +1,30 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !ERRORIGNORE YES
+SET !TIMEOUT_TAG 0
+
+URL GOTO=https://www.facebook.com/marketplace/create/item
+WAIT SECONDS=5
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=E:\gp\3.JPG
+WAIT SECONDS=5
+TAG POS=2 TYPE=INPUT:TEXT ATTR=* CONTENT=Motor<SP>gp<SP>mini<SP>surabaya<SP>murah<SP>082131404044
+WAIT SECONDS=5
+TAG POS=3 TYPE=INPUT:TEXT ATTR=* CONTENT=Rp<SP>3.000.000
+WAIT SECONDS=5
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_6Imbw5ZDv_R<SP>sx_3f62f2&&TXT:
+WAIT SECONDS=3
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>m6k467ps<SP>sp_tE8nbLtpraQ<SP>sx_834026&&TXT:
+WAIT SECONDS=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV" BUTTON=0
+WAIT SECONDS=5
+TAG POS=1 TYPE=SPAN ATTR=TXT:Baru
+WAIT SECONDS=3
+'EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(7)>DIV>DIV>LABEL>DIV>DIV>INPUT" BUTTON=0
+'EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(7)>DIV>DIV>LABEL>DIV>DIV>INPUT" CHARS="BULLDOG"
+WAIT SECONDS=5
+TAG POS=1 TYPE=TEXTAREA ATTR=* CONTENT="TELP : 082131404044 / 081333330048  Spesifikasi : -Motor mini 50cc mesin 2tak -Non bpkb non stnk ( masih golongan mainan ) -Tinggi jok 50cm -Ban depan Ring 6.5 -Ban belakang Ring 6.5 -Knalpot racing -Muatan beban 90kg, cocok utk usia >4tahun -Bahan bakar bensin campur 20:1 -Kapasitas tangki 2 liter -Kecepatan max 40km/jam -Starter pullstart -Matic ( tinggal gas ) -Sistem rem cakram depan belakang -Sistem pendingin udara  SEKEDAR INFORMASI : ~bisa ambil sendiri datang ke toko ~kami periksa & pastikan kondisi barang sudah baik 100% dlm fisik maupun mesin sebelum dikirim ~menerima retur barang jika ada kesalahan kami ~packing di jamin aman dan rapi ~garansi mesin selama 6bulan ~dan bonus berupa takaran botol+kunci setelan motor.."
+WAIT SECONDS=10
+TAG POS=2 TYPE=SPAN ATTR=TXT:Selanjutnya
+WAIT SECONDS=10
+TAG POS=2 TYPE=SPAN ATTR=TXT:Terbitkan
+WAIT SECONDS=2

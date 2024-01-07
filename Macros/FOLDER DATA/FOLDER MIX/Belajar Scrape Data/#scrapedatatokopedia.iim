@@ -1,0 +1,16 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !ERRORIGNORE YES
+SET !EXTRACT_TEST_POPUP NO
+
+TAG POS=1 TYPE=h1 ATTR=class:css-11wwreq<SP>er46ge0 EXTRACT=TXT
+TAG POS=1 TYPE=P ATTR=class:css-1lrkg2s EXTRACT=TXT
+TAG POS=1 TYPE=div ATTR=class:unf-card<SP>unf-card--container<SP>css-5lep9j-unf-card<SP>eue3g1e0 EXTRACT=TXT
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>IMG" BUTTON=0
+WAIT SECONDS=1
+EVENT TYPE=CLICK SELECTOR="#content>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>IMG" BUTTON=0
+WAIT SECONDS=1
+TAG POS=1 TYPE=img ATTR=class:ril-image-current<SP>ril__image EXTRACT=HREF
+'ganti dengan folder penyimpanan teman-teman data scrape "C:\Users\hamsa\Downloads\Documents\SCRAPE\TOKPED
+SAVEAS TYPE=EXTRACT FOLDER=C:\Users\hamsa\Downloads\Documents\SCRAPE\TOKPED FILE=kaospolos.csv
+WAIT SECONDS=1

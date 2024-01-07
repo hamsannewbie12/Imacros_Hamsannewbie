@@ -1,0 +1,49 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+'last update: 12-03-2018 22:37
+
+'===========SETTING============
+
+SET !DATASOURCE grup1.txt
+
+'Delay posting (detik)
+SET !VAR1 20
+
+'Start script dari baris berapa? (default = 1)
+SET !LOOP 1
+
+'Setting lokasi gambar (support JPG/PNG)
+SET !VAR2 C:\Users\Zainul\Pictures\networking.jpg
+SET !VAR3 D:\lokasi\gambar2.png
+SET !VAR4 D:\lokasi\gambar3.png
+
+'Setting status
+SET !VAR5 "KALIMAT STATUS BARIS PERTAMA<BR>BARIS KEDUA<BR><br>BARIS KETIGA"
+
+'------------------------------
+
+SET !REPLAYSPEED FAST 
+SET !ERRORIGNORE YES
+SET !DATASOURCE_COLUMNS 5
+SET !DATASOURCE_LINE {{!LOOP}}
+SET !TIMEOUT_STEP 3
+
+URL GOTO=https://m.facebook.com/groups/?seemore
+
+TAG POS=1 TYPE=A ATTR=TXT:{{!COL1}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/composer/mbasic/?av=*&refid=18 ATTR=NAME:view_photo
+TAG POS=1 TYPE=INPUT:FILE FORM=ACTION:/composer/mbasic/?csid=*&av=*&view_overview ATTR=NAME:file1 CONTENT={{!VAR2}}
+TAG POS=1 TYPE=INPUT:FILE FORM=ACTION:/composer/mbasic/?csid=*&av=*&view_overview ATTR=NAME:file2 CONTENT={{!VAR3}}
+TAG POS=1 TYPE=INPUT:FILE FORM=ACTION:/composer/mbasic/?csid=*&av=*&view_overview ATTR=NAME:file3 CONTENT={{!VAR4}}
+
+WAIT SECONDS=1
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/composer/mbasic/?csid=*&av=*&view_overview ATTR=NAME:add_photo_done
+WAIT SECONDS=5
+EVENT TYPE=CLICK SELECTOR="#u_0_0" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="#u_0_0" CHARS={{!VAR5}}<BR><BR>{{!LOOP}}{{!Now:ddmmhhss}}{{!LOOP}}
+WAIT SECONDS=5
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:composer_form ATTR=NAME:view_post
+TAG POS=1 TYPE=A ATTR=TXT:Skip
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/friends/selector/?return_uri=* ATTR=NAME:done
+WAIT SECONDS={{!VAR1}}

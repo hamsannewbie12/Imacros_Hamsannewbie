@@ -1,0 +1,173 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE kaospolosfbmp.csv
+SET !LOOP 2
+SET !ERRORIGNORE YES
+SET !EXTRACT_TEST_POPUP NO
+SET !TIMEOUT_STEP 5
+SET MAX "150"
+SET MIN "100"
+SET RANDOMWAKTU EVAL("Math.floor(Math.random() * ({{MAX}} - {{MIN}})) + {{MIN}};")
+SET JEDAUPLOADFILE "10"
+'=================================================
+
+URL GOTO=https://www.facebook.com/marketplace/create/item
+WAIT SECONDS=10
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=C:\Users\Administrator\Downloads\FOTO\UPLOAD1\{{!COL9}}.jpg
+WAIT SECONDS=10
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=C:\Users\Administrator\Downloads\FOTO\GAMBAR2\{{!COL10}}.jpg
+WAIT SECONDS=10
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=C:\Users\Administrator\Downloads\FOTO\GAMBAR3\{{!COL11}}.jpg
+WAIT SECONDS=10
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=C:\Users\Administrator\Downloads\FOTO\GAMBAR4\{{!COL12}}.jpg
+WAIT SECONDS=10
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=C:\Users\Administrator\Downloads\FOTO\GAMBAR5\{{!COL13}}.jpg
+WAIT SECONDS=10
+'=================================================
+'JUDUL PRODUK 
+EVENT TYPE=CLICK XPATH="//label[@aria-label=\'Judul\']" BUTTON=0
+WAIT SECONDS=1
+TAG POS=2 TYPE=INPUT:TEXT ATTR=* CONTENT={{!COL1}}
+WAIT SECONDS=2
+'=================================================
+'HARGA PRODUK 
+EVENT TYPE=CLICK XPATH="//label[@aria-label=\'Harga\']" BUTTON=0
+WAIT SECONDS=1
+TAG POS=3 TYPE=INPUT:TEXT ATTR=* CONTENT={{!COL2}}
+WAIT SECONDS=1
+'=================================================
+'DEKSRIPSI PRODUK 
+EVENT TYPE=CLICK XPATH="//label[@aria-label=\'Keterangan\']" BUTTON=0
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:10 CONTENT={{!COL3}}
+WAIT SECONDS=5
+'==================================================
+'KATEGORY PRODUK
+EVENT TYPE=CLICK XPATH="//label[@aria-label=\'Kategori\']" BUTTON=0
+WAIT SECONDS=1
+TAG POS=2 TYPE=SPAN ATTR=TXT:{{!COL4}}
+WAIT SECONDS=2
+'=================================================
+'KONDISI PRODUK ISI ( BARU, Bekas - Seperti Baru, Bekas - Seperti Baru,Bekas - Cukup Baik)
+EVENT TYPE=CLICK XPATH="//label[@aria-label=\'Kondisi\']" BUTTON=0 
+WAIT SECONDS=4
+EVENT TYPE=CLICK SELECTOR="#mount_0_0>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>SPAN" CONTENT={{!COL5}}
+WAIT SECONDS=2
+'=================================================
+'MEREK PRODUK 
+EVENT TYPE=CLICK XPATH="//label[@aria-label=\'Merek\']" BUTTON=0 
+WAIT SECONDS=2
+TAG POS=4 TYPE=INPUT:TEXT ATTR=* CONTENT={{!COL6}}
+WAIT SECONDS=2
+'=================================================
+'SIZE PRODUK ( OPSI UNTUK PRODUK FASHION ) Untuk produk lain kosongkan biarkan saja
+EVENT TYPE=CLICK XPATH="//label[@aria-label=\'Ukuran\']" BUTTON=0 
+WAIT SECONDS=2
+TAG POS=5 TYPE=INPUT:TEXT ATTR=* CONTENT={{!COL7}}
+WAIT SECONDS=2
+'=================================================
+'PAUSE
+'=================================================
+'LABEL PRODUK ( ISI DENGAN KATA KUNCI ) 
+WAIT SECONDS=1
+EVENT TYPE=CLICK XPATH="//label[@aria-label=\'Label produk\']" BUTTON=0
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL14}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL15}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL16}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL17}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL18}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL19}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL20}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL21}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL22}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL23}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL24}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL25}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL26}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL27}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL28}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL29}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL30}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL31}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL32}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=TEXTAREA ATTR=ROWS:1 CONTENT={{!COL33}}
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_CtVoyu-0Wmg<SP>sx_d9a184&&TXT:
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Label produk\']" KEYS="[13]"
+WAIT SECONDS=5
+'=================================================
+'LOKASI PRODUK YANG INGIN DI TARGET
+EVENT TYPE=CLICK XPATH="//label[@aria-label=\'Lokasi\']" BUTTON=0
+WAIT SECONDS=3
+EVENTS TYPE=KEYPRESS XPATH="//label[@aria-label=\'Lokasi\']" CONTENT=#ERASEALL#
+WAIT SECONDS=1
+TAG POS=1 TYPE=INPUT:TEXT ATTR=ID:jsc_c_w CONTENT={{!COL8}}
+WAIT SECONDS=3
+TAG POS=1 TYPE=SPAN ATTR=TXT:{{!COL8}}
+WAIT SECONDS=1
+'=================================================
+'POSTING PRODUK VERSI INDONESIA FACEBOOK
+TAG POS=2 TYPE=SPAN ATTR=TXT:Selanjutnya
+WAIT SECONDS=10
+TAG POS=2 TYPE=SPAN ATTR=TXT:Terbitkan
+WAIT SECONDS=30
+'DURASI ANTAR POSTINGAN 
+WAIT SECONDS={{RANDOMWAKTU}}
+REFRESH

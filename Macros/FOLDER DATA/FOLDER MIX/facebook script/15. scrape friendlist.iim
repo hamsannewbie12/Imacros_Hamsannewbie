@@ -1,0 +1,14 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+SET !EXTRACT_TEST_POPUP NO
+TAB T=1
+
+TAG POS={{!LOOP}} TYPE=A ATTR=CLASS:_5q6s<SP>_8o<SP>_8t<SP>lfloat<SP>_ohe EXTRACT=HREF
+
+SET !VAR1 EVAL("'{{!EXTRACT}}'.replace(\"https://www.facebook.com/\",\"\").replace(\"?fref=pb&hc_location=friends_tab\",\"\").replace(\"profile.php?id=\",\"\").replace(\"&fref=pb&hc_location=friends_tab\",\"\");")
+SET !EXTRACT {{!VAR1}}
+
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=friendlist.txt
+WAIT SECONDS=0.1
+
+SET !EXTRACT NULL
+URL GOTO=javascript:window.scrollBy(0,500)

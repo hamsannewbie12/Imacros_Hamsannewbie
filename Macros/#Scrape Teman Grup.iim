@@ -1,0 +1,7 @@
+﻿SET !ERRORIGNORE YES
+SET !LOOP 1
+SET ! EXTRACT_TEST_POPUP NO 
+
+TAG POS=1 TYPE=A ATTR=CLASS:oajrlxb2<SP>g5ia77u1<SP>qu0x051f<SP>esr5mh6w<SP>e9989ue4<SP>r7d6kgcz<SP>rq0escxv<SP>nhd2j8a9<SP>nc684nl6<SP>p7hjln8o<SP>kvgmc6g5<SP>cxmmr5t8<SP>oygrvhab<SP>hcukyx3x<SP>jb3vyjys<SP>rz4wbd8a<SP>qt6c0cv9<SP>a8nywdso<SP>i1ao9s8h<SP>esuyzwwr<SP>f1sip0of<SP>lzcic4wl<SP>gpro0wi8<SP>oo9gr5id<SP>lrazzd5p EXTRACT=HREF 
+
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=temanscrape.csv

@@ -1,0 +1,15 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !EXTRACT_TEST_POPUP NO
+SET !ERRORIGNORE YES
+TAG POS={{!LOOP}} TYPE=A ATTR=CLASS:_5i_s<SP>_8o<SP>_8r<SP>lfloat<SP>_ohe&&HREF:https://*.facebook.com/*fref=pb&hc_location=profile_browser EXTRACT=HREF
+
+SET !VAR1 EVAL("'{{!EXTRACT}}'.replace(\"https://www.facebook.com/\",\"\").replace(\"https://web.facebook.com/\",\"\").replace(\"?fref=pb&hc_location=profile_browser\",\"\").replace(\"profile.php?id=\",\"\").replace(\"&fref=pb&hc_location=profile_browser\",\"\");")
+
+SET !EXTRACT NULL
+SET !EXTRACT {{!VAR1}}
+
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=likerpost-{{!NOW:yyyymmdd}}.txt
+WAIT SECONDS=0.1
+
+URL GOTO=javascript:window.scrollBy(0,500)

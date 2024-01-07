@@ -1,0 +1,29 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !ERRORIGNORE YES
+SET !EXTRACT_TEST_POPUP NO
+SET !DATASOURCE wacoba1.csv
+SET !TIMEOUT_PAGE 499
+SET !TIMEOUT_STEP 9
+SET !LOOP 2
+SET !DATASOURCE_LINE {{!LOOP}}
+
+URL GOTO=https://api.whatsapp.com/send?phone={{!COL2}}&text={{!COL3}}
+TAG POS=1 TYPE=A ATTR=ID:action-button
+wait seconds=20
+TAG POS=1 TYPE=BUTTON ATTR=CLASS:compose-btn-send&&TXT:
+'wait seconds=20
+
+'============ATTACHMENT============
+
+'/tentukan lokasi gambar
+'SET !VAR1 E:\PROJECT\03<SP>FREEBIES\WASender\preview.png
+
+'EVENT TYPE=MOUSEDOWN SELECTOR="#main>HEADER>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>BUTTON" BUTTON=0
+'TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT={{!VAR1}}
+'WAIT SECONDS=2
+'EVENT TYPE=CLICK SELECTOR="#app>DIV>DIV>DIV>SPAN:nth-of-type(2)>DIV>SPAN>DIV>DIV>DIV:nth-of-type(2)>DIV>SPAN>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(3)>DIV" BUTTON=0
+'EVENTS TYPE=KEYPRESS SELECTOR="#app>DIV>DIV>DIV>SPAN:nth-of-type(2)>DIV>SPAN>DIV>DIV>DIV:nth-of-type(2)>DIV>SPAN>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)" CHARS="{{!COL2}}"
+'WAIT SECONDS=1
+'TAG POS=1 TYPE=BUTTON ATTR=CLASS:btn<SP>btn-round<SP>btn-l
+'WAIT SECONDS=10

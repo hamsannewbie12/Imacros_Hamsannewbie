@@ -1,0 +1,6 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+TAG POS={{!LOOP}} TYPE=DIV ATTR=class:o_h<SP>J_x<SP>mq_CZ<SP>G_e<SP>w_N  EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=C:\Users\media\Documents\iMacros\GudangScrape\ FILE=emailyahoo.csv
+WAIT SECONDS=0.2

@@ -1,0 +1,22 @@
+﻿VERSION BUILD=8920312 RECORDER=FX
+
+'-----------------
+
+'// SETTING DELAY
+SET !VAR1 3
+set !VAR2 5
+
+'-----------------
+SET !ERRORIGNORE YES
+SET !EXTRACT_TEST_POPUP NO
+SET !REPLAYSPEED FAST
+SET !MARKOBJECT NO
+SET !TIMEOUT_STEP 3
+SET random EVAL("var min = {{!VAR1}}; var max = {{!VAR2}}; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+TAG POS=1 TYPE=A ATTR=TXT:Join
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Cancel
+WAIT SECONDS=1
+TAG POS=1 TYPE=A ATTR=TXT:Leave<SP>This<SP>Page
+
+ URL GOTO=javascript:window.scrollBy(0,1000)

@@ -1,0 +1,5 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+'URL GOTO=https://www.facebook.com/marketplace/edit/?listing_id=3086660981460726
+'EVENT TYPE=MOUSEDOWN SELECTOR="#mount_0_0>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)" BUTTON=0
+URL GOTO=javascript:window.scrollBy(0,500)

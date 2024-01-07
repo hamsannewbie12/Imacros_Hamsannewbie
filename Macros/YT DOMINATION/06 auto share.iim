@@ -1,0 +1,73 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+SET !ERRORIGNORE YES
+SET !DATASOURCE autocommentshare.csv
+SET !LOOP 2
+
+'Auto Share
+URL GOTO={{!COL1}}
+wait seconds=10
+
+'Share to Facebook
+TAG POS=1 TYPE=BUTTON ATTR=ID:button&&CLASS:style-scope<SP>yt-icon-button&&ARIA-LABEL:Share&&TXT:
+wait seconds=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Facebook
+wait seconds=1
+TAB T=2
+wait seconds=1
+TAG POS=1 TYPE=TEXTAREA FORM=ACTION:/v5.0/dialog/share/submit ATTR=NAME:xhpc_message_text CONTENT="{{!COL2}}"
+wait seconds=1
+TAG POS=2 TYPE=DIV ATTR=CLASS:_7a60&&TXT:
+wait seconds=1
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/v5.0/dialog/share/submit ATTR=NAME:stories_selector CONTENT=YES
+wait seconds=1
+TAG POS=1 TYPE=BUTTON FORM=ACTION:/v5.0/dialog/share/submit ATTR=NAME:__CONFIRM__
+wait seconds=10
+TAB T=1
+
+'Share to Pinterest
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Pinterest
+wait seconds=1
+TAB T=2
+wait seconds=1
+TAG POS=1 TYPE=INPUT:SEARCH ATTR=* CONTENT="{{!COL4}}"
+wait seconds=1
+TAG POS=1 TYPE=PATH ATTR=D:M17.75<SP>13.25h-4.5v4.5a1.25<SP>1.25<SP>0<SP>0<SP>1-2.5<SP>0v-4.5h-4.5a1.25<SP>1.25<SP>0<SP>0<SP>1<SP>0-2.5h4.5v-4.5a1.25<SP>1.25<SP>0<SP>0<SP>1<SP>2.5<SP>0v4.5h4.5a1.25<SP>1.25<SP>0<SP>0<SP>1<SP>0<SP>2.5M12<SP>0C5.37<SP>0<SP>0<SP>5.37<SP>0<SP>12s5.37<SP>12<SP>12<SP>12<SP>12-5.37<SP>12-12S18.63<SP>0<SP>12<SP>0&&TXT:
+wait seconds=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Buat
+wait seconds=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Kirim
+wait seconds=10
+TAB CLOSE
+TAB T=1
+
+'Share to Blogger
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Blogger
+wait seconds=1
+TAB T=2
+wait seconds=1
+TAG POS=2 TYPE=SPAN ATTR=TXT:Bagikan
+wait seconds=1
+TAG POS=1 TYPE=PRE ATTR=TXT:<iframe<SP>width="480"<SP>height="270"<SP>src="https://youtu*
+TAG POS=1 TYPE=TEXTAREA ATTR=AUTOCORRECT:off&&AUTOCAPITALIZE:off&&SPELLCHECK:false&&TABINDEX:0&&WRAP:off&&TXT: CONTENT="<br><br>{{!COL2}}"
+wait seconds=5
+TAG POS=1 TYPE=DIV ATTR=TXT:Publikasikan
+wait seconds=1
+TAG POS=4 TYPE=SPAN ATTR=TXT:Konfirmasi
+wait seconds=10
+TAB CLOSE
+TAB T=1
+
+'Share to Tumblr
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Tumblr
+wait seconds=1
+TAB T=2
+wait seconds=1
+TAG POS=2 TYPE=DIV ATTR=TXT:​{{!COL4}}
+wait seconds=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Post
+wait seconds=10
+TAB CLOSE
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*30 + 60); randomNumber;")
+WAIT SECONDS={{!VAR1}}

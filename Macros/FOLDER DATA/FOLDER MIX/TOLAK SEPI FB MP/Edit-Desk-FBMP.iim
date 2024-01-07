@@ -1,0 +1,20 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+SET !ERRORIGNORE YES
+SET !ERRORCONTINUE YES
+SET !EXTRACT_TEST_POPUP YES
+SET !LOOP 1
+SET !DATASOURCE sherina.txt
+TAB T=1
+URL GOTO=https://mtouch.facebook.com/marketplace/selling/item/?for_sale_item_id={{!COL1}}
+WAIT SECONDS=3
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*9 + 5); randomNumber;")
+wait seconds=3
+TAG POS=1 TYPE=TEXTAREA FORM=NAME:NoFormName ATTR=NAME:description EXTRACT=TXT
+SET !VAR2 {{!EXTRACT}}
+ADD !VAR2 "<BR>."
+wait seconds=3
+TAG POS=1 TYPE=TEXTAREA FORM=NAME:NoFormName ATTR=NAME:description CONTENT={{!VAR2}}
+wait seconds=5
+TAG POS=2 TYPE=DIV ATTR=TXT:Posting
+wait seconds={{!VAR1}}
+refresh

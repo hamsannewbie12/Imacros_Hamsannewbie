@@ -1,0 +1,6 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+TAG POS={{!LOOP}} TYPE=P ATTR=class:h4<SP>mt-0  EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=C:\Users\media\Documents\iMacros\GudangScrape\ FILE=fakenama2.csv
+WAIT SECONDS=0.3

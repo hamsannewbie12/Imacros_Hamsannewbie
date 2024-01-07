@@ -1,0 +1,4 @@
+﻿WAIT SECONDS=0.5
+EVENT TYPE=CLICK XPATH="(//div[@class='btn-follow active follow L14'])[1]" BUTTON=0
+url goto=javascript:window.scrollBy(0,100)
+WAIT SECONDS=5

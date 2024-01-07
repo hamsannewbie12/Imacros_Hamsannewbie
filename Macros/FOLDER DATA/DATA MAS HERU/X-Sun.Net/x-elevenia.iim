@@ -1,0 +1,97 @@
+﻿SET !REPLAYSPEED FAST
+SET !ERRORIGNORE YES
+SET !TIMEOUT_STEP 0
+SET !DATASOURCE_LINE {{!LOOP}}
+
+
+'//////// Silahkan Setting Disini///////////////////
+' Set Mulai dari baris
+SET !LOOP 1
+'Set Nama File Csv di D://Dropship
+SET !VAR1 namafile
+' SET harga tambah harga dari harga CSV
+SET tambahHarga 100000
+' SET harga DISKON, harga CSV+tambahharga
+SET diskon 99000
+
+
+
+
+SET !DATASOURCE D:\\Dropship\{{!VAR1}}.csv
+'URL GOTO=about:blank
+URL GOTO=http://soffice.elevenia.co.id/product/ProductRegAction/regSimpleForm.do
+' Set Ready Stock
+EVENT TYPE=CLICK SELECTOR="div.Conts_Box_Sub_A:nth-child(3)>label:nth-child(1)>p:nth-child(2)" BUTTON=0
+'KATEGORI 1
+'EVENT TYPE=CLICK SELECTOR="#category1" BUTTON=0
+'EVENT TYPE=CLICK SELECTOR="#category1>option:nth-child(23)" BUTTON=0
+TAG POS=1 TYPE=SELECT ATTR=ID:category1 CONTENT=${{!COL27}}
+EVENT TYPE=CLICK SELECTOR="#category1" BUTTON=0
+'KATEGORI 2
+'EVENT TYPE=CLICK SELECTOR="#category2" BUTTON=0
+'EVENT TYPE=CLICK SELECTOR="#category2 > option:nth-child(2)" BUTTON=0
+TAG POS=1 TYPE=SELECT ATTR=ID:category2 CONTENT=${{!COL28}}
+EVENT TYPE=CLICK SELECTOR="#category2" BUTTON=0
+'KATEGORI 3
+'EVENT TYPE=CLICK SELECTOR="#category3" BUTTON=0
+'EVENT TYPE=CLICK SELECTOR="#category3 > option:nth-child(6)" BUTTON=0
+TAG POS=1 TYPE=SELECT ATTR=ID:category3 CONTENT=${{!COL29}}
+EVENT TYPE=CLICK SELECTOR="#category3" BUTTON=0
+'Nama produk
+TAG POS=1 TYPE=INPUT:TEXT ATTR=ID:prdNm CONTENT={{!COL2}}
+SET gbr2 EVAL("var a='{{!COL20}}'; if(a == '#NEXT#'){a='';}else{ a='prdImage02';} a")
+SET gbr3 EVAL("var a='{{!COL21}}'; if(a == '#NEXT#'){a='';}else{ a='prdImage03';} a")
+SET gbr4 EVAL("var a='{{!COL22}}'; if(a == '#NEXT#'){a='';}else{ a='prdImage04';} a")
+SET gbr5 EVAL("var a='{{!COL23}}'; if(a == '#NEXT#'){a='';}else{ a='prdImage05';} a")
+'Upload Gambar
+TAG POS=1 TYPE=INPUT:FILE ATTR=ID:prdImage01 CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-1.jpg
+TAG POS=1 TYPE=INPUT:FILE ATTR=ID:{{gbr2}} CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-2.jpg
+TAG POS=1 TYPE=INPUT:FILE ATTR=ID:{{gbr3}} CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-3.jpg
+TAG POS=1 TYPE=INPUT:FILE ATTR=ID:{{gbr4}} CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-4.jpg
+TAG POS=1 TYPE=INPUT:FILE ATTR=ID:{{gbr5}} CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-5.jpg
+'HTML Type
+FRAME F=1
+WAIT SECONDS=0.5
+TAG POS=1 TYPE=INPUT:RADIO ATTR=CLASS:radio CONTENT=%N
+'Deskripsi
+TAG POS=1 TYPE=TEXTAREA ATTR=ID:* CONTENT=EVAL("var e='{{!COL15}}'; var a=e.replace(/<br>/g,'<br />'); a")
+FRAME F=0
+WAIT SECONDS=0.5
+'Harga
+TAG POS=1 TYPE=INPUT:* ATTR=ID:selPrcView CONTENT=EVAL("var e={{!COL11}}+{{tambahHarga}}; e")
+'Diskon
+EVENT TYPE=CLICK SELECTOR=".C1 > li:nth-child(3) > label:nth-child(1) > p:nth-child(2)" BUTTON=0
+TAG POS=1 TYPE=INPUT:TEXT ATTR=ID:dscAmtWonView CONTENT={{diskon}}
+EVENT TYPE=CLICK SELECTOR=".B1 > li:nth-child(1) > label:nth-child(1) > p:nth-child(2)" BUTTON=0
+TAG POS=1 TYPE=INPUT:TEXT ATTR=ID:cupnIssEndDyView CONTENT=22/10/2017
+'Berat
+EVENT TYPE=CLICK SELECTOR="#selPrdWght" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#selPrdWght > option:nth-child(22)" BUTTON=0
+TAG POS=1 TYPE=INPUT ATTR=ID:prdWght CONTENT=EVAL("var a=\"{{!COL12}}\"; var b=1000; var c=a/b; c")
+'Stok
+TAG POS=1 TYPE=INPUT ATTR=ID:prdSelQtyView CONTENT={{!COL10}}
+'Info pengembalian
+TAG POS=1 TYPE=TEXTAREA ATTR=ID:rtngExchDetail CONTENT=Batas<SP>pengembalian<SP>max<SP>2<SP>hari
+'SAVE
+EVENT TYPE=CLICK SELECTOR=".btn_typeD" BUTTON=0
+WAIT SECONDS=10
+'LOG UPLOAD
+SET !EXTRACT_TEST_POPUP NO
+SET !EXTRACT NULL
+TAG POS=1 TYPE=SPAN ATTR=CLASS:completeT EXTRACT=TXT
+SET Upload_Gagal EVAL("var s='{{!EXTRACT}}'; var x; if(s== '#EANF#') {x='{{!VAR1}}_ELEVENIA_GAGAL.log';} else {x='';} x;")
+SET !EXTRACT {{!LOOP}}
+ADD !EXTRACT {{!COL2}}
+SAVEAS TYPE=EXTRACT FOLDER=D:\Dropship\ FILE={{Upload_Gagal}}
+
+
+
+
+
+
+
+
+
+
+
+

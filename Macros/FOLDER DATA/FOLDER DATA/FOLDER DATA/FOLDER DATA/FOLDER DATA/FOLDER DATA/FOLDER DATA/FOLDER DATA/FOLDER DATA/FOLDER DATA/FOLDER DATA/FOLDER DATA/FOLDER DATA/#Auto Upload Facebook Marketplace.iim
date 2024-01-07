@@ -1,0 +1,54 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE upload1.csv
+SET !LOOP 2
+SET !ERRORIGNORE YES
+SET !VAR1 EVAL("var xx=Math.floor(Math.random()*(5-4))+4; xx;") 
+SET !VAR2 EVAL("var xx=Math.floor(Math.random()*(15-10))+10; xx;") 
+SET !VAR3 EVAL("var xx=Math.floor(Math.random()*(500-250))+250; xx;") 
+
+URL GOTO=https://mtouch.facebook.com/marketplace/selling/item
+WAIT SECONDS={{!VAR1}}
+'Nama produk atau kata kunci produk
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>FORM>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>FORM>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV>INPUT" CHARS="{{!COL1}}"
+WAIT SECONDS={{!VAR1}}
+'Harga produk
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>FORM>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>FORM>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>INPUT" CHARS="{{!COL2}}"
+WAIT SECONDS={{!VAR1}}
+'Jenis produk atau category produk
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>FORM>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV" BUTTON=0
+WAIT SECONDS={{!VAR1}}
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type({{!COL7}})>DIV" BUTTON=0
+WAIT SECONDS={{!VAR2}}
+'Penjelasan produk
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>FORM>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>TEXTAREA" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>FORM>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>TEXTAREA" CHARS="{{!COL3}}"
+WAIT SECONDS={{!VAR2}}
+'kota target
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>FORM>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV" BUTTON=0
+WAIT SECONDS={{!VAR1}}
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>INPUT" CHARS="{{!COL8}}"
+WAIT SECONDS={{!VAR1}}
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV" BUTTON=0
+WAIT SECONDS={{!VAR1}}
+'foto produk 1 " ganti A:\FOTO\PRODUK1\ dengan folder penyimpanan foto produk anda"
+TAG POS=1 TYPE=DIV ATTR=CLASS:_vby&&TXT:
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=INPUT:FILE FORM=NAME:NoFormName ATTR=NAME:photos-input CONTENT=D:\UPLOAD\FOTO1\{{!COL4}}.JPG
+WAIT SECONDS={{!VAR2}}
+'foto produk 2 " ganti A:\FOTO\PRODUK2\ dengan folder penyimpanan foto produk anda"
+TAG POS=1 TYPE=DIV ATTR=CLASS:_vby&&TXT:
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=INPUT:FILE FORM=NAME:NoFormName ATTR=NAME:photos-input CONTENT=D:\UPLOAD\FOTO2\{{!COL5}}.JPG
+WAIT SECONDS={{!VAR2}}
+'foto produk 3 " ganti A:\FOTO\PRODUK3\ dengan folder penyimpanan foto produk anda"
+TAG POS=1 TYPE=DIV ATTR=CLASS:_vby&&TXT:
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=INPUT:FILE FORM=NAME:NoFormName ATTR=NAME:photos-input CONTENT=D:\UPLOAD\FOTO3\{{!COL5}}.JPG
+WAIT SECONDS={{!VAR2}}
+TAG POS=1 TYPE=DIV ATTR=ID:u_0_25
+'durasi jeda upload postingan 1 ke postingan 2 
+WAIT SECONDS={{!VAR3}}

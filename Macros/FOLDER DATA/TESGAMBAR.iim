@@ -1,0 +1,10 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE kaos1.csv
+SET !LOOP 3
+SET !ERRORIGNORE YES
+
+'URL GOTO=https://mtouch.facebook.com/marketplace/selling/item?mds=%2Fnt%2Fmodal%2F%3Fquery%3D%252Fmarketplace%252Fnt%252Fcategory%252Fpicker%252F%253Fcomposer_category_id%253D%25255B%2525221ocg7l-1%25253A2%252522%25252Cnull%25255D%2526composer_hidden_category_id%253D%25255B%2525221ocg7l-1%25253A3%252522%25252Cnull%25255D%26title%3DCategory&mdf=1
+TAG POS=1 TYPE=DIV ATTR=CLASS:_vby&&TXT:
+WAIT SECONDS=5
+TAG POS=1 TYPE=INPUT:FILE FORM=ID:6vg2bs-0:0 ATTR=ID:u_0_0 CONTENT=C:\Users\User\Documents\UPLOAD\5\{{!COL4}}.JPG

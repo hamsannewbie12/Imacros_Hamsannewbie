@@ -1,0 +1,24 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+SET !EXTRACT_TEST_POPUP NO
+SET !REPLAYSPEED FAST
+TAB T=1
+SET !LOOP 1
+
+TAG POS={{!LOOP}} TYPE=A ATTR=CLASS:<SP>UFICommentActorName EXTRACT=TXT
+SET !VAR1 {{!EXTRACT}}
+SET !EXTRACT NULL
+
+TAG POS={{!LOOP}} TYPE=A ATTR=CLASS:<SP>UFICommentActorName EXTRACT=HREF
+SET !VAR2 EVAL("'{{!EXTRACT}}'.replace(\"https://www.facebook.com/\",\"\").replace(\"https://web.facebook.com/\",\"\").replace(\"profile.php?id=\",\"\").replace(\"&fref=ufi\",\"\").replace(\"&rc=p\",\"\").replace(\"?fref=ufi\",\"\").replace(\"?rc=p\",\"\");")
+SET !EXTRACT NULL
+
+TAG POS={{!LOOP}} TYPE=SPAN ATTR=CLASS:UFICommentBody EXTRACT=TXT
+SET !VAR3 {{!EXTRACT}}
+SET !EXTRACT NULL
+
+SET !EXTRACT {{!VAR1}}
+ADD !EXTRACT {{!VAR2}}
+ADD !EXTRACT {{!VAR3}}
+
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=scrape-komentar.csv
+WAIT SECONDS=0

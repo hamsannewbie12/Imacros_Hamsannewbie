@@ -1,0 +1,17 @@
+﻿var InginLike=prompt("Ingin Ngulang Berapa Kali");
+var nama = prompt ("Masukan nama");
+var listText = ['a','b','c','d','e','fi','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+for (var g = 1; g <= parseInt(InginLike); g++) {
+	
+macro = "CODE:"; 
+macro +="SET !ERRORIGNORE YES\n"; 
+macro+="URL GOTO=https://www.google.com/?gws_rd=ssl" + "\n";  
+
+macro+="TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:/search ATTR=NAME:q CONTENT={{NAMA}}<SP>" + listText[g] + "\n";  
+macro+="WAIT SECONDS=2" + "\n";  
+
+macro+="TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/search ATTR=NAME:btnK" + "\n";  
+iimSet("NAMA",nama);
+iimPlay(macro)
+}

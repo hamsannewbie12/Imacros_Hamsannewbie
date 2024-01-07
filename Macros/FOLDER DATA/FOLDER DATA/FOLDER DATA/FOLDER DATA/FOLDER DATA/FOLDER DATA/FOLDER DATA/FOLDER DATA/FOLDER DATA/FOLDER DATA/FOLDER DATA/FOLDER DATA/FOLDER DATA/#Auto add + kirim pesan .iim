@@ -1,0 +1,35 @@
+﻿'Script di buat oleh Hamsan siswanto, 
+'Jangan rubah apapun tanpa persetujuan pemiliki/pembuat script " HUKUM menjual tanpa izin pemilik adalah HARAM (DOSA)
+'==================================
+VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE temanbm.csv
+SET !LOOP 3 
+SET !ERRORIGNORE YES
+'SET !TIMEOUT_PAGE 499
+'SET !TIMEOUT_STEP 9 
+'==================================
+URL GOTO={{!COL1}}
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Add<SP>Friend
+WAIT SECONDS=5
+'==================================
+TAG POS=1 TYPE=A ATTR=TXT:Message
+WAIT SECONDS=2
+TAG POS=1 TYPE=A ATTR=TXT:Message
+WAIT SECONDS=2
+'======================================
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV:nth-of-type(7)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(4)>DIV>DIV>DIV>SPAN>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+WAIT SECONDS=1
+'======================================
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV:nth-of-type(7)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(4)>DIV>DIV>DIV>SPAN>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR="."
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV:nth-of-type(7)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(4)>DIV>DIV>DIV>SPAN>DIV>DIV>DIV>DIV" CHARS="{{!COL2}}"
+WAIT SECONDS=10
+'======================================
+TAG POS=1 TYPE=PATH ATTR=D:M11,8.3L2.6,8.8C2.4,8.8,2.3,8.9,2.3,9l-1.2,4.1c-0.2,0.5,0,1.1,0.4,1.5C1.7,14.9,2,15,2.4,15c0.2,0,0.4,0,0.6-0.1l11.2-5.6<SP>C14.8,9,15.1,8.4,15,7.8c-0.1-0.4-0.4-0.8-0.8-1L3,1.1C2.5,0.9,1.9,1,1.5,1.3C1,1.7,0.9,2.3,1.1,2.9L2.3,7c0,0.1,0.2,0.2,0.3,0.2<SP>L11,7.7c0,0,0.3,0,0.3,0.3S11,8.3,11,8.3z&&FILL:#0099ff&&TXT:
+WAIT SECONDS=5
+'==================================
+'Terima kasih, saya do'akan bisnis anda semakin berkembang lancar selalu di selalu diberkahi.
+'Facebook : Hamsan siswanto
+'Instagram : @Hamsan_siswanto
+'Whatsapp: 085717636868 
+'==================================

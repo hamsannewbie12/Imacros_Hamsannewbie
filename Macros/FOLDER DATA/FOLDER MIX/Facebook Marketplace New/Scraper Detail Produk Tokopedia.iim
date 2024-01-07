@@ -1,0 +1,79 @@
+﻿'OWL ASISSTANCE v2 bot sederhana yang di buat untuk menghemat dan memudahkan pekerjaan Internet Marketing Anda
+'Catatan Penting tentang OWL ASISSTANCE :
+'1. BOLEH dipake untuk keperluan pribadi/komersil untuk buka jasa.
+'2. TIDAK BOLEH dibagikan lagi kepada orang lain baik itu di JUAL (tanpa sepengetahuan saya), BONUS AFF atau di bagikan secara GERATIS
+'Ngeyel Saya serahkan semua nya sama ALLAH SWT, da aku mah apa atuh :'( . 
+'Pertanyaan, saran fitur tambahan, dan komentar tentang bot ini, silahkan kesini ajah :fb.com/aliffabdoelrahman | D2285340
+'Semoga OWL ASISSTANCE v2 Bot ini bermanfaat buat cikgu :D
+'Please jangan hapus catatan diatas tadi.
+'------------------------------------------------------
+SET !REPLAYSPEED FAST
+SET !ERRORIGNORE YES
+SET !EXTRACT_TEST_POPUP NO
+' Delay Timeout bisa di sesuaikan dengan kondisi kecepatan internet masing-masin, ubah nilai 5 dan 60 untuk mempercepat/memperlambat delay
+SET !TIMEOUT 60
+' Kecepatan perintah ( Fast = Sangat Cepat/ Medium= Sedang/ Slow=Sangat Lambat)
+SET !DATASOURCE TOPED.csv
+SET !DATASOURCE_COLUMNS 10
+'SET !LOOP 29
+SET !DATASOURCE_LINE {{!LOOP}}
+'-----------------------------------------------------------------------------------
+URL GOTO={{!COL1}}
+WAIT SECONDS=3
+ADD !EXTRACT {{!URLCURRENT}}
+'Keterangan Toko
+TAG POS=1 TYPE=A ATTR=DATA-TESTID:llbPDPFooterShopName EXTRACT=TXT
+TAG POS=1 TYPE=DIV ATTR=CLASS:css-10rrpsc<SP>e1hrfe840 EXTRACT=TXT
+TAG POS=1 TYPE=SPAN ATTR=DATA-TESTID:lblPDPFooterLastOnline EXTRACT=TXT
+'Badge Toko
+TAG POS=1 TYPE=P ATTR=DATA-TESTID:imgPDPDetailShopBadge EXTRACT=TXT
+WAIT SECONDS=0.2
+'Nama Produk
+TAG POS=1 TYPE=H1 ATTR=DATA-TESTID:lblPDPDetailProductName EXTRACT=TXT
+WAIT SECONDS=0.2
+'Harga Produk
+TAG POS=1 TYPE=H3 ATTR=DATA-TESTID:lblPDPDetailProductPrice EXTRACT=TXT
+WAIT SECONDS=0.2
+'Rating Produk
+TAG POS=1 TYPE=SPAN ATTR=ROLE:presentation&&CLASS:css-4g6ai3 EXTRACT=TXT
+WAIT SECONDS=0.2
+'Produk Terjual
+TAG POS=1 TYPE=SPAN ATTR=DATA-TESTID:lblPDPDetailProductSuccessRate EXTRACT=TXT
+WAIT SECONDS=0.2
+'Produk Dilihat
+TAG POS=1 TYPE=SPAN ATTR=DATA-TESTID:lblPDPDetailProductSeenCounter EXTRACT=TXT
+WAIT SECONDS=0.2
+'Berat Produk
+TAG POS=1 TYPE=P ATTR=CLASS:css-d8brx2-unf-heading<SP>e1qvo2ff8&&DATA-TESTID:PDPDetailWeightValue EXTRACT=TXT
+WAIT SECONDS=0.2
+'Kondisi Produk
+TAG POS=1 TYPE=P ATTR=CLASS:css-d8brx2-unf-heading<SP>e1qvo2ff8&&DATA-TESTID:PDPDetailConditionValue EXTRACT=TXT
+WAIT SECONDS=0.2
+'Asuransi Produk
+TAG POS=1 TYPE=P ATTR=CLASS:css-d8brx2-unf-heading<SP>e1qvo2ff8&&DATA-TESTID:PDPInfoInsuranceValue EXTRACT=TXT
+WAIT SECONDS=0.2
+'Kategori
+TAG POS=1 TYPE=DIV ATTR=CLASS:css-1iciwsv<SP>evv6ury0 EXTRACT=TXT
+WAIT SECONDS=0.2
+'Deskripsi Produk
+TAG POS=1 TYPE=p ATTR=data-testid:lblPDPDeskripsiProduk EXTRACT=HTM
+WAIT SECONDS=0.2
+'Gambar Produk
+TAG POS=1 TYPE=DIV ATTR=CLASS:css-1o7qq2k<SP>ew904gd0
+TAG POS=1 TYPE=IMG ATTR=DATA-TESTID:PDPImageDetail&&CLASS:css-udmgcf EXTRACT=HREF
+TAG POS=1 TYPE=BUTTON ATTR=TYPE:button&&DATA-TESTID:btnPDPImageDetailNext
+WAIT SECONDS=1
+TAG POS=1 TYPE=IMG ATTR=DATA-TESTID:PDPImageDetail&&CLASS:css-udmgcf EXTRACT=HREF
+TAG POS=1 TYPE=BUTTON ATTR=TYPE:button&&DATA-TESTID:btnPDPImageDetailNext
+WAIT SECONDS=1
+TAG POS=1 TYPE=IMG ATTR=DATA-TESTID:PDPImageDetail&&CLASS:css-udmgcf EXTRACT=HREF
+TAG POS=1 TYPE=BUTTON ATTR=TYPE:button&&DATA-TESTID:btnPDPImageDetailNext
+WAIT SECONDS=1
+TAG POS=1 TYPE=IMG ATTR=DATA-TESTID:PDPImageDetail&&CLASS:css-udmgcf EXTRACT=HREF
+TAG POS=1 TYPE=BUTTON ATTR=TYPE:button&&DATA-TESTID:btnPDPImageDetailNext
+WAIT SECONDS=1
+TAG POS=1 TYPE=IMG ATTR=DATA-TESTID:PDPImageDetail&&CLASS:css-udmgcf EXTRACT=HREF
+TAG POS=1 TYPE=BUTTON ATTR=TYPE:button&&DATA-TESTID:btnPDPImageDetailNext
+WAIT SECONDS=1
+SAVEAS TYPE=EXTRACT FOLDER={{!FOLDER_DATASOURCE}} FILE=AMBEXA.CSV
+WAIT SECONDS=0.2

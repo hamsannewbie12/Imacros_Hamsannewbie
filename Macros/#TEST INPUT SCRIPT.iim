@@ -1,0 +1,14 @@
+﻿'EVENT TYPE=CLICK XPATH="(//input[@name=\'PropertyDetailsForm[landSize]\'])" BUTTON=0
+'EVENTS TYPE=KEYPRESS XPATH="(//input[@name=\'PropertyDetailsForm[landSize]\'])" CHARS="10000"
+'hapus
+'EVENTS TYPE=KEYPRESS XPATH="(//input[@name='PropertyDetailsForm[yearBuilt\]']" CONTENT=#ERASEALL#
+EVENT TYPE=CLICK XPATH="(//input[@name=\'PropertyDetailsForm[yearBuilt]\'])" BUTTON=0
+EVENTS TYPE=KEYPRESS XPATH="(//input[@name=\'PropertyDetailsForm[yearBuilt]\'])" CHARS="A" MODIFIERS="CTRL"
+EVENTS TYPE=KEYPRESS XPATH="//input[@name=\'PropertyDetailsForm[yearBuilt]\']" CONTENT=#ERASEALL#
+EVENTS TYPE=KEYPRESS XPATH="(//input[@name=\'PropertyDetailsForm[yearBuilt]\'])" CHARS="2021"
+
+
+'EVENT TYPE=CLICK XPATH="(//input[@name=\'PropertyDetailsForm[buildingSize]\'])" BUTTON=0
+'EVENTS TYPE=KEYPRESS XPATH="(//input[@name=\'PropertyDetailsForm[buildingSize]\'])" CHARS="10000"
+
+

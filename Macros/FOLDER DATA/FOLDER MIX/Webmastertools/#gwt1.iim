@@ -1,0 +1,15 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE gwt02.csv
+SET !LOOP 42
+SET !ERRORIGNORE YES
+
+URL GOTO=https://search.google.com/search-console?resource_id=https%3A%2F%2Fjasapembuatanvideoiklan.siterubix.com%2F
+WAIT SECONDS=5
+EVENT TYPE=CLICK SELECTOR="#gb>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(2)>FORM>DIV>DIV>DIV>DIV>DIV>DIV>INPUT:nth-of-type(2)" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="#gb>DIV:nth-of-type(2)>DIV:nth-of-type(2)>DIV:nth-of-type(2)>FORM>DIV>DIV>DIV>DIV>DIV>DIV>INPUT:nth-of-type(2)" CHARS="{{!COL1}}"
+WAIT SECONDS=10
+TAG POS=1 TYPE=BUTTON FORM=NAME:NoFormName ATTR=CLASS:gb_lf&&ARIA-LABEL:Search&&ROLE:button&&TXT:
+WAIT SECONDS=10
+TAG POS=1 TYPE=SPAN ATTR=TXT:Request<SP>indexing
+PAUSE

@@ -1,0 +1,37 @@
+﻿'Script Upload ZOHO X-sun.Net
+SET !REPLAYSPEED FAST
+SET !ERRORIGNORE YES
+SET !TIMEOUT_STEP 0
+SET !DATASOURCE_LINE {{!LOOP}}
+
+
+
+'* Silahkan edit disini
+'-Mulai baris ke...
+SET !LOOP 1
+'-masukan username ZOHO
+SET ZohoUSER username
+'-masukan ID ZOHO
+SET ZohoID 8264412312312123
+'-masukan nama file csv
+SET namaCSV a
+TAB T=1
+
+SET !DATASOURCE D:\\Dropship\{{namaCSV}}.csv
+URL GOTO=https://social.zoho.com/social/{{ZohoUSER}}/{{ZohoID}}/Home.do#posts/published/instagram
+REFRESH
+WAIT SECONDS=10
+TAG POS=1 TYPE=SPAN ATTR=TXT:New<sp>Post
+WAIT SECONDS=5
+
+SET !CLIPBOARD {{!COL15}}
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV:nth-of-type(13)>DIV>TABLE>TBODY>TR>TD>DIV>DIV:nth-of-type(2)>DIV" BUTTON=0
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV:nth-of-type(13)>DIV>TABLE>TBODY>TR>TD>DIV>DIV:nth-of-type(2)>DIV" CHAR="v" MODIFIERS="ctrl"
+WAIT SECONDS=3
+
+TAG POS=1 TYPE=DIV ATTR=CLASS:imgSelector
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\\Dropship\img\{{namaCSV}}\{{!LOOP}}-1.jpg
+WAIT SECONDS=2
+
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Post<sp>Now
+WAIT SECONDS=5

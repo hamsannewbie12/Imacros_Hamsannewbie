@@ -1,0 +1,46 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+'SET !DATASOURCE 
+'SET !LOOP 
+SET !ERRORIGNORE YES
+
+'URL GOTO=https://www.facebook.com/marketplace/you/selling/
+'WAIT SECONDS=2
+TAG POS={{!LOOP}} TYPE=SPAN ATTR=TXT:Ditawarkan<SP>ke<SP>Marketplace
+WAIT SECONDS=3
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>I" BUTTON=0
+WAIT SECONDS=3
+TAG POS=1 TYPE=SPAN ATTR=TXT:Edit<SP>Tawaran
+WAIT SECONDS=10
+TAG POS=2 TYPE=I ATTR=CLASS:hu5pjgll<SP>lzf7d6o1<SP>sp_6vYwcjvw5IC<SP>sx_8609e6&&TXT:
+WAIT SECONDS=4
+TAG POS=2 TYPE=DIV ATTR=TXT:Baru
+WAIT SECONDS=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(7)>DIV>DIV>LABEL>DIV>DIV>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(7)>DIV>DIV>LABEL>DIV>DIV>INPUT" CHARS="spandex"
+WAIT SECONDS=2
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(8)>DIV>DIV>LABEL>DIV>DIV>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(8)>DIV>DIV>LABEL>DIV>DIV>INPUT" CHARS="M,L,XL"
+WAIT SECONDS=0.5
+TAG POS=1 TYPE=TEXTAREA ATTR=DIR:auto&&ARIA-DESCRIBEDBY:jsc_c_5m&&ID:jsc_c_5l&&CLASS:oajrlxb2<SP>rq0escxv<SP>f1sip0of<SP>hidtqoto<SP>lzcic4wl<SP>g5ia77u1<SP>gcieejh5<SP>bn081pho<SP>humdl8nn<SP>izx4hr6d<SP>oo9gr5id<SP>j83agx80<SP>jagab5yi<SP>knj5qynh<SP>fo6rh5oj<SP>ni8dbmo4<SP>stjgntxs<SP>ieid39z1<SP>k4urcfbm&&ROWS:1&&TXT: CONTENT=S
+WAIT SECONDS=1
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>TEXTAREA" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>TEXTAREA" CHARS="kaos polos"
+WAIT SECONDS=0.5
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>I" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>TEXTAREA" CHARS="kaos polos murah"
+WAIT SECONDS=0.5
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>I" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>TEXTAREA" CHARS="kaos polos jakarta"
+WAIT SECONDS=0.5
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>I" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>TEXTAREA" CHARS="kaos polos keren"
+WAIT SECONDS=0.5
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>I" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>TEXTAREA" CHARS="kaos polos spandex"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(10)>DIV>DIV>DIV>LABEL>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>I" BUTTON=0
+WAIT SECONDS=0.5
+TAG POS=1 TYPE=SPAN ATTR=TXT:Perbarui
+WAIT SECONDS=0.5
+TAG POS=1 TYPE=I ATTR=CLASS:hu5pjgll<SP>m6k467ps<SP>sp_6vYwcjvw5IC<SP>sx_e8cfd4&&TXT:
+WAIT SECONDS=0.5

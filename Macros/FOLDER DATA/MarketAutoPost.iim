@@ -1,0 +1,520 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !TIMEOUT_PAGE 10
+SET !ERRORIGNORE YES
+SET !TIMEOUT_STEP 1
+SET !ENCRYPTION NO
+'Create jualfb.com wa 08123444559
+'Script ini bisa di pakai tak terbatas akun asalkan punya anda sendiri.. jika ada yang menginginkan script ini tolong langusng arahkan ke saya  
+'Semoga Script ini bisa Bermanfaat dan memperlancar pintu rejeki anda ... terimakasih
+SET !VAR9 EVAL("var number = ['Mozilla/5.0 (Windows NT 10.0; WOW64; rv:48.0) Gecko/20100101 Firefox/48.0']; var string = ''; for(var i = 0; i < 1; i++){string += number[parseInt(Math.random() * 1)]}; string")											
+SET !USERAGENT {{!var9}}	
+
+URL GOTO=https://www.facebook.com/marketplace/
+wait seconds=5
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Jual<SP>Sesuatu
+wait seconds=10
+'TAG POS=1 TYPE=SPAN ATTR=TXT:Barang<SP>Dijual
+TAG POS=1 TYPE=I ATTR=ALT:&&CLASS:img<SP>sp_VzQ04fqX1Vv<SP>sx_dd73a3&&TXT:
+wait seconds=10
+SET !TIMEOUT_STEP 0
+
+'Kategori***************************************************************************************************************************************************************************************************************************************************
+SET !DATASOURCE D:\Marketplace\Marketplace\Data\Kategori.txt
+SET !EXTRACT {{!COL1}}
+SET KATEGORI {{!EXTRACT}}
+SET !EXTRACT NULL
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>SPAN>SPAN>LABEL>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>SPAN>SPAN>LABEL>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>SPAN>SPAN>LABEL>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>SPAN>SPAN>LABEL>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>SPAN>SPAN>LABEL>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>SPAN>SPAN>LABEL>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>SPAN>SPAN>LABEL>INPUT" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>SPAN>SPAN>LABEL>INPUT" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>UL>LI:nth-of-type({{KATEGORI}})>DIV>DIV:nth-of-type(2)>DIV" BUTTON=0
+
+
+'Apa yang aNda Jual***************************************************************************************************************************************************************************************************************************************************
+SET !DATASOURCE D:\Marketplace\Marketplace\Data\JudulBarang.txt
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*10+ 1); randomNumber;")
+SET !DATASOURCE_LINE {{!VAR1}}
+SET !EXTRACT {{!COL1}}
+SET JUDUL {{!EXTRACT}}
+SET !EXTRACT NULL
+
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>LABEL>INPUT" CHARS="{{JUDUL}}"
+
+
+'Harga***************************************************************************************************************************************************************************************************************************************************
+SET !DATASOURCE D:\Marketplace\Marketplace\Data\Harga.txt
+SET !VAR2 EVAL("var randomNumber=Math.floor(Math.random()*10+ 1); randomNumber;")
+SET !DATASOURCE_LINE {{!VAR2}}
+SET !EXTRACT {{!COL1}}
+SET HARGA {{!EXTRACT}}
+SET !EXTRACT NULL
+
+TAG POS=8 TYPE=INPUT:TEXT ATTR=* CONTENT=Rp<SP>{{HARGA}}
+TAG POS=9 TYPE=INPUT:TEXT ATTR=* CONTENT=Rp<SP>{{HARGA}}
+TAG POS=10 TYPE=INPUT:TEXT ATTR=* CONTENT=Rp<SP>{{HARGA}}
+TAG POS=11 TYPE=INPUT:TEXT ATTR=* CONTENT=Rp<SP>{{HARGA}}
+TAG POS=12 TYPE=INPUT:TEXT ATTR=* CONTENT=Rp<SP>{{HARGA}}
+SET !TIMEOUT_STEP 0
+'kota***************************************************************************************************************************************************************************************************************************************************
+SET !DATASOURCE D:\Marketplace\Marketplace\Data\NamaKota.txt
+SET !VAR3 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET !DATASOURCE_LINE {{!VAR3}}
+SET !EXTRACT {{!COL1}}
+SET KOTA {{!EXTRACT}}
+SET !EXTRACT NULL
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>SPAN>LABEL>INPUT" CHARS="{{KOTA}}"
+wait seconds=1
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>UL>LI>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV>DIV>DIV>DIV>UL>LI>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV>DIV>DIV>DIV>UL>LI>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV>DIV>DIV>DIV>UL>LI>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV>DIV>DIV>DIV>UL>LI>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV>DIV>DIV>DIV>UL>LI>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENT TYPE=MOUSEDOWN SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV>DIV>DIV>DIV>UL>LI>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>SPAN" BUTTON=0
+
+wait seconds=3
+
+'Keterangan Barang***************************************************************************************************************************************************************************************************************************************************
+
+SET !DATASOURCE D:\Marketplace\Marketplace\Data\KeteranganBarang.txt
+SET !VAR4 EVAL("var randomNumber=Math.floor(Math.random()*10+ 1); randomNumber;")
+SET !DATASOURCE_LINE {{!VAR4}}
+SET !EXTRACT {{!COL1}}
+SET KETERANGAN {{!EXTRACT}}
+SET !EXTRACT NULL
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(6)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV" BUTTON=0
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENT TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV" CHAR=" "
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV>DIV>DIV>DIV>DIV>DIV" CHARS="{{KETERANGAN}}"
+
+
+
+SET Foto1 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET Foto2 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET Foto3 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET Foto4 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET Foto5 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET Foto6 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET Foto7 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET Foto8 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET Foto9 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+SET Foto10 EVAL("var randomNumber=Math.floor(Math.random()*30+ 1); randomNumber;")
+
+SET !TIMEOUT_STEP 1
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto1}}.jpg
+wait seconds=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto2}}.jpg
+wait seconds=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto3}}.jpg
+wait seconds=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto4}}.jpg
+wait seconds=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto5}}.jpg
+wait seconds=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto6}}.jpg
+wait seconds=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto7}}.jpg
+wait seconds=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto8}}.jpg
+wait seconds=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto9}}.jpg
+wait seconds=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=NAME:composer_photo CONTENT=D:\Marketplace\Marketplace\Foto\{{Foto10}}.jpg
+wait seconds=10
+
+
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Selanjutnya
+wait seconds=3
+
+SET !TIMEOUT_STEP 0
+SET Pilih1 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih2 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih3 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih4 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih5 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih6 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih7 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih8 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih9 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih10 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih11 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih12 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih13 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih14 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih15 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih16 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih17 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih18 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih19 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih20 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih21 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih22 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih23 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih24 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih25 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih26 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih27 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih28 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih29 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih30 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih31 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih32 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih33 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih34 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih35 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih36 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih37 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih38 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih39 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih40 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih41 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih42 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih43 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih44 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih45 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih46 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih47 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih48 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih49 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih50 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih51 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih52 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih53 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih54 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih55 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih56 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih57 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih58 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih59 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih60 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih61 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih62 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih63 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih64 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih65 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih66 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih67 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih68 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih69 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih70 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih71 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih72 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih73 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih74 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih75 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih76 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih77 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih78 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih79 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih80 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih81 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih82 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih83 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih84 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih85 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih86 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih87 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih88 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih89 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih90 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih91 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih92 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih93 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih94 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih95 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih96 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih97 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih98 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih99 EVAL("Math.floor(Math.random()*100 + 1);")
+SET Pilih100 EVAL("Math.floor(Math.random()*100 + 1);")
+
+
+TAG POS={{Pilih1}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih2}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih3}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih4}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih5}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih6}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih7}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih8}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih9}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih10}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih11}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih12}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih13}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih14}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih15}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih16}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih17}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih18}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih19}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih20}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih21}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih22}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih23}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih24}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih25}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih26}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih27}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih28}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih29}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih30}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih31}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih32}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih33}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih34}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih35}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih36}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih37}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih38}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih39}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih40}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih41}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih42}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih43}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih44}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih45}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih46}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih47}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih48}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih49}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih50}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih51}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih52}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih53}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih54}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih55}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih56}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih57}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih58}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih59}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih60}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih61}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih62}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih63}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih64}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih65}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih66}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih67}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih68}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih69}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih70}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih71}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih72}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih73}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih74}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih75}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih76}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih77}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih78}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih79}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih80}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih81}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih82}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih83}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih84}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih85}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih86}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih87}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih88}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih89}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih90}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih91}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih92}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih93}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih94}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih95}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih96}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih97}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih98}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih99}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+TAG POS={{Pilih100}} TYPE=DIV ATTR=ARIA-CHECKED:false&&ARIA-DISABLED:false&&CLASS:_kx6<SP>_kxa<SP>_4ofs&&ROLE:checkbox&&TABINDEX:0&&TXT:
+
+
+
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Terbitkan
+wait seconds=10
+TAG POS=3 TYPE=BUTTON ATTR=TXT:Tutup
+TAG POS=5 TYPE=BUTTON ATTR=TXT:Tutup
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(13)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(14)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+wait seconds=3
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(6)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(8)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(9)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(10)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(11)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(12)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(13)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(14)>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV>BUTTON" BUTTON=0

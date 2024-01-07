@@ -1,0 +1,9 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE testyoutube.csv
+SET !LOOP 1
+SET !ERRORIGNORE YES
+
+'URL GOTO=https://www.youtube.com/results?search_query=cara+membuat+bubur+ayam+
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:search-form ATTR=ID:search CONTENT={{!COL1}}
+WAIT SECONDS=5

@@ -1,0 +1,95 @@
+﻿SET !REPLAYSPEED FAST
+SET !ERRORIGNORE YES
+SET !TIMEOUT_STEP 0
+SET !DATASOURCE_LINE {{!LOOP}}
+
+'/////// SETTING DISINI //////////////
+SET !VAR1 gsm1
+SET !LOOP 1
+SET provinsi "Jawa Barat"
+SET kabupaten "kab. Bandung"
+SET kecamatan "Rancaekek"
+SET TIKI FALSE
+SET JNE TRUE
+SET COD FALSE
+
+
+
+'///////////////////////////////////////////////////////
+'Load Data CSV
+SET !DATASOURCE D:\Dropship\{{!VAR1}}.csv
+URL GOTO=https://www.jualo.com/iklan/pasang-iklan-gratis
+'BARU
+TAG POS=2 TYPE=INPUT:RADIO ATTR=NAME:ad[ad_type_id]
+'JUDUL IKLAN
+TAG POS=1 TYPE=INPUT:TEXT ATTR=NAME:ad[detail_attributes][name] CONTENT={{!COL2}}
+'KATEGORI
+TAG POS=1 TYPE=SELECT ATTR=NAME:ad[category_id] CONTENT=${{!COL32}}
+TAG POS=1 TYPE=SELECT ATTR=NAME:ad[subcategory_id] CONTENT=${{!COL33}}
+TAG POS=1 TYPE=SELECT ATTR=NAME:ad[options[0]] CONTENT=${{!COL34}}
+'DESKRIPSI
+TAG POS=1 TYPE=TEXTAREA ATTR=NAME:ad[detail_attributes][description] CONTENT={{!COL15}}
+'LOKASI
+TAG POS=1 TYPE=SELECT ATTR=NAME:ad[state_id] CONTENT=${{provinsi}}
+TAG POS=1 TYPE=SELECT ATTR=NAME:ad[city_id] CONTENT=${{kabupaten}}
+TAG POS=1 TYPE=SELECT ATTR=NAME:ad[district_id] CONTENT=${{kecamatan}}
+'JALAN
+TAG POS=1 TYPE=INPUT:TEXT ATTR=NAME:ad[detail_attributes][address] CONTENT=jalan
+'STOK
+TAG POS=1 TYPE=INPUT:TEXT ATTR=NAME:ad[stock] CONTENT={{!COL10}}
+'BERAT
+TAG POS=1 TYPE=INPUT:TEXT ATTR=NAME:ad[detail_attributes][weight_input] CONTENT={{!COL12}}
+TAG POS=1 TYPE=INPUT:RADIO ATTR=NAME:ad[detail_attributes][weight_unit]
+
+SET ex1 EVAL("var s='{{TIKI}}'; var x; if(s== 'TRUE') {x='tiki';} else {x='';} x;")
+SET ex2 EVAL("var s='{{JNE}}'; var x; if(s== 'TRUE') {x='jne';} else {x='';} x;")
+SET ex3 EVAL("var s='{{COD}}'; var x; if(s== 'TRUE') {x='pickup';} else {x='';} x;")
+'EKSPEDISI
+TAG POS=1 TYPE=INPUT:CHECKBOX ATTR=VALUE:{{ex1}} CONTENT=
+TAG POS=2 TYPE=INPUT:CHECKBOX ATTR=VALUE:{{ex2}} CONTENT=
+TAG POS=3 TYPE=INPUT:CHECKBOX ATTR=VALUE:{{ex3}} CONTENT=
+'HARGA
+TAG POS=1 TYPE=INPUT:TEL ATTR=NAME:ad[price] CONTENT={{!COL11}}
+'TUKAR
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/iklan ATTR=NAME:ad[exchange] CONTENT={{!COL16}}
+'NEGO
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/iklan ATTR=NAME:ad[nego] CONTENT={{!COL17}}
+WAIT SECONDS=1
+'GAMBAR
+FRAME F=1
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\Dropship\img\{{!VAR1}}\{{!LOOP}}-1.jpg
+FRAME F=2
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\Dropship\img\{{!VAR1}}\{{!LOOP}}-2.jpg
+FRAME F=3
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\Dropship\img\{{!VAR1}}\{{!LOOP}}-3.jpg
+FRAME F=4
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\Dropship\img\{{!VAR1}}\{{!LOOP}}-4.jpg
+FRAME F=5
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\Dropship\img\{{!VAR1}}\{{!LOOP}}-5.jpg
+FRAME F=0
+'SETUJU TERM CONDITION
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/iklan ATTR=NAME:term1_check CONTENT=YES
+TAG POS=1 TYPE=INPUT:CHECKBOX FORM=ACTION:/iklan ATTR=NAME:term2_check CONTENT=YES
+WAIT SECONDS=5
+'SUBMIT
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ACTION:/iklan ATTR=NAME:commit
+'LOG UPLOAD
+SET !EXTRACT_TEST_POPUP NO
+SET !EXTRACT NULL
+TAG POS=1 TYPE=DIV ATTR=CLASS:profile_tabs EXTRACT=htm
+SET Upload_Gagal EVAL("var s='{{!EXTRACT}}'; var x; if(s== '#EANF#') {x='{{!VAR1}}_Jualo_GAGAL.log';} else {x='';} x;")
+SET !EXTRACT {{!LOOP}}
+ADD !EXTRACT {{!COL2}}
+SAVEAS TYPE=EXTRACT FOLDER=D:\Dropship\ FILE={{Upload_Gagal}}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+SET !DATASOURCE nurlailaeditlok.csv
+SET !LOOP 1
+SET !ERRORIGNORE YES
+SET !VAR1 EVAL("var xx=Math.floor(Math.random()*(8-5))+5; xx;") 
+SET !VAR2 EVAL("var xx=Math.floor(Math.random()*(5-3))+3; xx;") 
+SET !VAR3 EVAL("var xx=Math.floor(Math.random()*(7-4))+4; xx;") 
+SET !VAR4 EVAL("var xx=Math.floor(Math.random()*(200-85))+85; xx;") 
+
+URL GOTO=https://mtouch.facebook.com/marketplace/selling/item/?for_sale_item_{{!COL1}}
+WAIT SECONDS={{!VAR1}}
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>FORM>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(5)>DIV>DIV" BUTTON=0
+WAIT SECONDS={{!VAR2}}
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>INPUT" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="HTML>BODY>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>INPUT" CHARS="{{!COL2}}"
+WAIT SECONDS={{!VAR3}}
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV" BUTTON=0
+WAIT SECONDS={{!VAR2}}
+EVENT TYPE=CLICK SELECTOR="#u_0_21" BUTTON=0
+WAIT SECONDS={{!VAR4}}
+'Script ini di buat oleh "Hamsan Newbie" Mohon tidak Mengedit/memperjual belikan
+'Tanpa seizin CREATOR Semoga bisnis anda selalu diberikan kemudahan, kelancaran rezeki dan Sukses selalu.

@@ -1,0 +1,176 @@
+﻿SET !LOOP 36
+SET !DATASOURCE fbniar.csv
+SET !DATASOURCE_LINE {{!LOOP}}
+SET !ERRORIGNORE YES 
+SET !EXTRACT_TEST_POPUP NO 
+SET !TIMEOUT_PAGE 60 
+SET !TIMEOUT_TAG 0 
+ONDIALOG POS=1 BUTTON=OK CONTENT= 
+URL GOTO=https://web.facebook.com/marketplace/create/item 
+ONDIALOG POS=1 BUTTON=OK CONTENT= 
+wait seconds=5 
+
+TAG POS=1 TYPE=INPUT:FILE ATTR=ACCEPT:image/*,image/heif,image/heic&&MULTIPLE:&&TYPE:file CONTENT={{!COL8}}
+SET CJIMG1 "{{!COL8}}"
+SET JIMG1 EVAL("var a=\'{{CJIMG1}}\'; if(a == \'\'){a=\'0\';} else {a=\'10\';} a;")
+WAIT SECONDS={{JIMG1}}
+TAG POS=1 TYPE=INPUT:FILE ATTR=ACCEPT:image/*,image/heif,image/heic&&MULTIPLE:&&TYPE:file CONTENT={{!COL9}}
+SET CJIMG2 "{{!COL9}}"
+SET JIMG2 EVAL("var a=\'{{CJIMG2}}\'; if(a == \'\'){a=\'0\';} else {a=\'10\';} a;")
+WAIT SECONDS={{JIMG2}}
+TAG POS=1 TYPE=INPUT:FILE ATTR=ACCEPT:image/*,image/heif,image/heic&&MULTIPLE:&&TYPE:file CONTENT={{!COL10}}
+SET CJIMG3 "{{!COL10}}"
+SET JIMG3 EVAL("var a=\'{{CJIMG3}}\'; if(a == \'\'){a=\'0\';} else {a=\'10\';} a;")
+WAIT SECONDS={{JIMG3}}
+TAG POS=1 TYPE=INPUT:FILE ATTR=ACCEPT:image/*,image/heif,image/heic&&MULTIPLE:&&TYPE:file CONTENT={{!COL11}}
+SET CJIMG4 "{{!COL11}}"
+SET JIMG4 EVAL("var a=\'{{CJIMG4}}\'; if(a == \'\'){a=\'0\';} else {a=\'10\';} a;")
+WAIT SECONDS={{JIMG4}}
+TAG POS=1 TYPE=INPUT:FILE ATTR=ACCEPT:image/*,image/heif,image/heic&&MULTIPLE:&&TYPE:file CONTENT={{!COL12}}
+SET CJIMG5 "{{!COL12}}"
+SET JIMG5 EVAL("var a=\'{{CJIMG5}}\'; if(a == \'\'){a=\'0\';} else {a=\'10\';} a;")
+WAIT SECONDS={{JIMG5}}
+
+
+TAG POS=1 TYPE=LABEL ATTR=aria-label:Kategori
+WAIT SECONDS=4 
+TAG POS=2 TYPE=SPAN ATTR=TXT:{{!COL13}} 
+WAIT SECONDS=2
+TAG POS=1 TYPE=LABEL ATTR=aria-label:Kondisi
+WAIT SECONDS=5
+SET KONDISI EVAL("\'{{!COL6}}\'.replace(/Baru/g, \'1\').replace(/Bekas - Seperti Baru/g, \'2\').replace(/Bekas - Seperti 1/g, \'2\').replace(/Bekas - Baik/g, \'3\').replace(/Bekas - Cukup Baik/g, \'4\').replace(/New/g, \'1\').replace(/Used - Like 1/g, \'2\').replace(/Used - Good/g, \'3\').replace(/Used - Fair/g, \'4\');") 
+SET !EXTRACT NULL 
+SET !EXTRACT {{KONDISI}} 
+SET !EXTRACT NULL 
+TAG POS={{KONDISI}} TYPE=DIV ATTR=role:"menuitemradio" 
+WAIT SECONDS=1
+
+'Judul 
+TAG POS=1 TYPE=LABEL ATTR=aria-label:"Judul" EXTRACT=HTM
+SET IDJD1 EVAL("\'{{!EXTRACT}}\' .split([\'for=\"\'])[1] .split([\'\"\'])[0];")
+SET !EXTRACT NULL
+EVENT TYPE=CLICK SELECTOR="#{{IDJD1}}" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="#{{IDJD1}}" CHARS="{{!COL1}}"
+WAIT SECONDS=2
+'HARGA 
+TAG POS=1 TYPE=LABEL ATTR=aria-label:"Harga" EXTRACT=HTM
+SET IDH EVAL("\'{{!EXTRACT}}\' .split([\'for=\"\'])[1] .split([\'\"\'])[0];")
+SET !EXTRACT NULL
+EVENT TYPE=CLICK SELECTOR="#{{IDH}}" BUTTON=0
+EVENTS TYPE=KEYPRESS SELECTOR="#{{IDH}}" CHARS="{{!COL2}}"
+WAIT SECONDS=1 
+
+'Lokasi 
+EVENT TYPE=CLICK XPATH="//input[@aria-label=\'Masukkan kota\']" BUTTON=0
+EVENTS TYPE=KEYPRESS XPATH="//input[@aria-label=\'Masukkan kota\']" CHARS="{{!COL3}}"
+WAIT SECONDS=4 
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV>DIV>UL>LI>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>DIV>SPAN" BUTTON=0
+EVENTS TYPE=KEYPRESS XPATH="//input[@aria-label=\'Masukkan kota\']" KEYS="[40,13]"
+WAIT SECONDS=1
+
+'Deskripsi 
+TAG POS=1 TYPE=LABEL ATTR=aria-label:Keterangan EXTRACT=HTM 
+SET IDKETERANGAN EVAL("\'{{!EXTRACT}}\' .split([\'for=\"\'])[1];") 
+SET !EXTRACT NULL 
+SET !EXTRACT {{IDKETERANGAN}} 
+SET IDKETERANGAN EVAL("\'{{!EXTRACT}}\' .split([\'\"\'])[0];") 
+SET !EXTRACT NULL 
+SET !EXTRACT {{IDKETERANGAN}} 
+SET !EXTRACT NULL
+SET DESKRIPSINYA {{!COL4}}<BR><BR>{{!COL5}} 
+TAG POS=1 TYPE=TEXTAREA ATTR=ID:{{IDKETERANGAN}} CONTENT={{DESKRIPSINYA}}
+WAIT SECONDS=1
+
+'Merek
+TAG POS=1 TYPE=LABEL ATTR=aria-label:Merek EXTRACT=HTM 
+SET IDMEREK EVAL("\'{{!EXTRACT}}\' .split([\'for=\"\'])[1];") 
+SET !EXTRACT NULL 
+SET !EXTRACT {{IDMEREK}} 
+SET IDMEREK EVAL("\'{{!EXTRACT}}\' .split([\'\"\'])[0];") 
+SET !EXTRACT NULL 
+SET !EXTRACT {{IDMEREK}} 
+SET !EXTRACT NULL 
+EVENT TYPE=CLICK XPATH="//input[@id=\'{{IDMEREK}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//input[@id=\'{{IDMEREK}}\']" CHARS="A" MODIFIERS="CTRL" 
+EVENTS TYPE=KEYPRESS XPATH="//input[@id=\'{{IDMEREK}}\']" CHARS="{{!COL7}}" 
+
+'Label 1-20
+TAG POS=1 TYPE=LABEL ATTR=aria-label:Label<SP>produk EXTRACT=HTM 
+SET IDLABEL EVAL("\'{{!EXTRACT}}\' .split([\'for=\"\'])[1];") 
+SET !EXTRACT NULL 
+SET !EXTRACT {{IDLABEL}} 
+SET IDLABEL EVAL("\'{{!EXTRACT}}\' .split([\'\"\'])[0];") 
+SET !EXTRACT NULL 
+SET !EXTRACT {{IDLABEL}} 
+SET !EXTRACT NULL 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL14}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL15}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL16}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL17}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL18}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL19}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL20}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL21}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL22}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL23}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL24}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL25}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL26}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL27}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL28}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL29}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL30}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL31}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL32}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+EVENT TYPE=CLICK XPATH="//textarea[@id=\'{{IDLABEL}}\']" BUTTON=0 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" CHARS="{{!COL33}}" 
+EVENTS TYPE=KEYPRESS XPATH="//textarea[@id=\'{{IDLABEL}}\']" KEYS="[13]" 
+
+SET RANDOMWAKTU EVAL("Math.floor(Math.random() * ({{MAX}} - {{MIN}})) + {{MIN}};") 
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Selanjutnya 
+TAG POS=2 TYPE=SPAN ATTR=TXT:Selanjutnya 
+WAIT SECONDS=10 
+
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Kirim 
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Publish 
+TAG POS=1 TYPE=BUTTON ATTR=TXT:Terbitkan 
+TAG POS=2 TYPE=SPAN ATTR=TXT:Terbitkan 
+WAIT SECONDS={{RANDOMWAKTU}} 

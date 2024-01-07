@@ -1,0 +1,18 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+'-----------------
+
+'// SETTING DELAY
+SET !VAR1 3
+set !VAR2 7
+
+'-----------------
+SET !ERRORIGNORE YES
+SET !EXTRACT_TEST_POPUP NO
+SET !REPLAYSPEED FAST
+SET !MARKOBJECT NO
+SET !TIMEOUT_STEP 3
+SET random EVAL("var min = {{!VAR1}}; var max = {{!VAR2}}; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+
+TAG POS={{!LOOP}} TYPE=SPAN ATTR=TXT:Invite
+WAIT SECONDS={{random}}

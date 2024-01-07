@@ -1,0 +1,62 @@
+﻿VERSION BUILD=7500718 RECORDER=FX
+TAB T=1
+SET !REPLAYSPEED FAST
+SET !ERRORIGNORE YES
+SET !TIMEOUT_STEP 0
+SET !DATASOURCE_LINE {{!LOOP}}
+
+' Mulai Baris ke
+SET !LOOP 1
+' Nama File CSV
+SET !VAR1 namafile
+'Setting Kategori
+SET kategori1 "Keperluan Pribadi"
+SET kategori2 "Fashion Pria"
+'Setting Type, sesuai kategori masing-masing
+SET type "Aksesoris"
+'Setting Merek, sesuai kategori masing-masing
+SET merek "Samsung"
+'Set Wilayah
+SET provinsi "Jakarta D.K.I."
+SET kota "Jakarta Selatan"
+SET kecamatan "Jagakarsa"
+
+
+
+
+'Load
+SET !DATASOURCE D:\\Dropship\{{!VAR1}}.csv
+URL GOTO=https://www.olx.co.id/post
+REFRESH
+TAG POS=1 TYPE=SPAN ATTR=TXT:{{kategori1}}
+TAG POS=1 TYPE=SPAN ATTR=TXT:{{kategori2}}
+WAIT SECONDS=3
+TAG POS=1 TYPE=SELECT ATTR=ID:type CONTENT=${{type}}
+TAG POS=1 TYPE=SELECT ATTR=ID:make CONTENT=${{merek}}
+'Nama produk
+TAG POS=1 TYPE=INPUT:TEXT ATTR=ID:title CONTENT={{!COL2}}
+'Deskripsi
+TAG POS=1 TYPE=TEXTAREA ATTR=ID:description CONTENT={{!COL15}}
+'Harga
+TAG POS=1 TYPE=INPUT:* ATTR=ID:price CONTENT={{!COL11}}
+'Upload Gambar
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-1.jpg
+WAIT SECONDS=3
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-2.jpg
+WAIT SECONDS=3
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-3.jpg
+WAIT SECONDS=3
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-4.jpg
+WAIT SECONDS=3
+TAG POS=1 TYPE=INPUT:FILE ATTR=* CONTENT=D:\\Dropship\img\{{!VAR1}}\{{!LOOP}}-5.jpg
+'Harga
+TAG POS=1 TYPE=INPUT:* ATTR=NAME:data[param_price][1] CONTENT={{!COL11}}
+TAG POS=1 TYPE=SELECT ATTR=ID:State CONTENT=${{provinsi}}
+WAIT SECONDS=2
+TAG POS=1 TYPE=SELECT ATTR=ID:City CONTENT=${{kota}}
+WAIT SECONDS=2
+TAG POS=1 TYPE=SELECT ATTR=ID:Locality CONTENT=${{kecamatan}}
+
+TAG POS=1 TYPE=BUTTON  ATTR=TXT:Pasang*
+
+WAIT SECONDS=5

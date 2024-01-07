@@ -1,0 +1,19 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+
+SET !ERRORIGNORE YES
+SET !DATASOURCE autocommentshare.csv
+SET !LOOP 2
+
+'Auto Comment
+URL GOTO={{!COL1}}
+wait seconds=1
+EVENT TYPE=MOUSEDOWN SELECTOR="#simplebox-placeholder" BUTTON=0
+wait seconds=1
+SET !CLIPBOARD {{!COL2}}
+EVENTS TYPE=KEYPRESS SELECTOR="#contenteditable-root" CHARS="V" MODIFIERS="CTRL"
+wait seconds=1
+TAG POS=1 TYPE=ytd-button-renderer ATTR=ID:submit-button&&CLASS:"style-scope ytd-commentbox style-primary size-default"
+wait seconds=3
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*10 + 20); randomNumber;")
+WAIT SECONDS={{!VAR1}}

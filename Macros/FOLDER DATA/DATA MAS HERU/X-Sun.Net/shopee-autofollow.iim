@@ -1,0 +1,17 @@
+' Sebelum menjalankan script silahkan masuk kehalaman follower target
+' contoh http://mall.shopee.co.id/shop/1941319/followers/ 
+' jika sudah masuk halaman target silahkan Playloop script sebanyak follower target
+' keberhasilan follow sangat dipengaruhi jaringan internet, 
+' Pastikan jaringan internent stabil
+' Script ini sudah otomatis memuat data follower berikutnya
+SET !ERRORIGNORE YES
+EVENT TYPE=CLICK SELECTOR="li.clickable_area:nth-child({{!LOOP}}) > div:nth-child(3) > span:nth-child(1)" BUTTON=0
+WAIT SECONDS=1
+SET scroll EVAL("a=\'{{!LOOP}}\';if (a % 7 == 0){b='javascript:window.scrollBy(0,20000)';}else {b='';}b")
+URL GOTO={{scroll}}
+WAIT SECONDS=1
+
+
+
+
+

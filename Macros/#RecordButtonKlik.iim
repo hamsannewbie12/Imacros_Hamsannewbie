@@ -1,0 +1,6 @@
+﻿'TAG POS=1 TYPE=DIV ATTR=ARIA-LABEL:Bagikan&&role:button&&tabindex:0
+'TAG POS=2 TYPE=DIV ATTR=aria-label:Bagikan&&role:button&&tabindex:0
+'TAG POS=1 TYPE=SPAN ATTR=class:select2-selection__arrow&&role:presentation
+'TAG POS=1 TYPE=li ATTR=class:select2-results__option<SP>select2-results__option--highlighted&&role:treeitem&&aria-selected:false&&TXT:"Jakarta Selatan"
+
+TAG POS=2 TYPE=SPAN ATTR=CLASS:aria-label:Simpan<SP>draf&&role:button&&tabindex:0

@@ -1,0 +1,14 @@
+﻿'UPDATE: 13-03-2018
+'---------------------------------
+VERSION BUILD=8940826 RECORDER=FX
+TAB T=1
+
+SET !ERRORIGNORE YES
+SET !LOOP 1
+
+ TAG POS=1 TYPE=BUTTON ATTR=CLASS:_42ft<SP>_4jy0<SP>FriendRequestAdd<SP>addButton<SP>_4jy3<SP>_*_51sy
+
+ SET !TIMEOUT_STEP 2
+
+ WAIT SECONDS=5
+ URL GOTO=javascript:window.scrollBy(0,1000)

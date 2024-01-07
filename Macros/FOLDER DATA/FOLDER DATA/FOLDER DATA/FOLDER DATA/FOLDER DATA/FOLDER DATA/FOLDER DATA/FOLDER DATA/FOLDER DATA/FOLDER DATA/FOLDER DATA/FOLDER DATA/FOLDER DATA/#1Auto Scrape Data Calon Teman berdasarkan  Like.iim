@@ -1,0 +1,5 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAB T=1
+'TAG POS={{!LOOP}} TYPE=H3 ATTR=CLASS:bk  EXTRACT=TXT
+TAG POS={{!LOOP}} TYPE=A ATTR=CLASS:href:bp<SP>bq<SP>br<SP>bn  EXTRACT=TXT
+'SAVEAS TYPE=EXTRACT FOLDER=C:\Users\media\Documents\iMacros\GudangScrape\ FILE=calontemankaosbola.csv
